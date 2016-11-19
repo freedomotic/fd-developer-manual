@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% set title = _('Overview') %}
+{% block body %}
+  <h1>{{ _('Freedomotic Developer Manual') }}</h1>
+
+  <br>
+  <table class="contentstable" align="center" style="margin-left: 30px">
+  <tbody>
+  <tr>
+    <td width="50%" valign="top">
+      <p class="biglink"><div class="section-title">{%trans%}The project{%endtrans%}</div>
+         - <a class="linkdescr" href="{{ pathto("the-project/what-is-freedomotic") }}">{%trans%}What is Freedomotic?{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("the-project/project-history") }}">{%trans%}The project history{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("the-project/team") }}">{%trans%}Team{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("the-project/features") }}">{%trans%}Features{%endtrans%}</a><br/>
+     </p>   
+     <p class="biglink"><div class="section-title">{%trans%}Getting started{%endtrans%}</div>
+         - <a class="linkdescr" href="{{ pathto("getting-started/development-environment") }}">{%trans%}How to set your development environment{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("getting-started/maven-reference-sheet") }}">{%trans%}Maven Quick Reference Sheet{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("getting-started/contributors-workflow") }}">{%trans%}Contributors workflow{%endtrans%}</a><br/>
+     </p> 
+     <p class="biglink"><div class="section-title">{%trans%}Architecture{%endtrans%}</div>
+         - <a class="linkdescr" href="{{ pathto("architecture/architecture") }}">{%trans%}The framework{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("architecture/messaging-system") }}">{%trans%}Messaging system{%endtrans%}</a><br/>
+      </p>    
+      <p class="biglink"><div class="section-title">{%trans%}Plugins development{%endtrans%}</div>
+         - <a class="linkdescr" href="{{ pathto("plugins/create-a-new-plugin") }}">{%trans%}Create a new plugin{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/api") }}">{%trans%}Freedomotic APIs{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/bind-things-state-to-hardware-data") }}">{%trans%}Bind things state to hardware data{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/bind-things-state-to-web-services-data") }}">{%trans%}Bind things state to web services data{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/handle-plugin-errors") }}">{%trans%}Handle errors{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/listen-to-events-programmatically") }}">{%trans%}Listen to Events programmatically{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("plugins/autodiscovering") }}">{%trans%}Autodiscover and autoconfigure things{%endtrans%}</a><br/>
+  
+        </p>  
+       
+    </td>
+    <td width="50%" valign="top">
+      <p class="biglink"><div class="section-title">{%trans%}Things development{%endtrans%}</div>
+         - <a class="linkdescr" href="{{ pathto("things/create-new-thing-types") }}">{%trans%}Create new thing types{%endtrans%}</a><br/>
+         - <a class="linkdescr" href="{{ pathto("things/add-new-thing-templates") }}">{%trans%}Create new thing templates{%endtrans%}</a><br/>
+
+      </p>
+     
+     
+    </td>
+    </tr>
+    </tbody>
+  </table>
+
+  
+
+{% endblock %}
