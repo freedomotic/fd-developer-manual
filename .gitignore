@@ -1,0 +1,4 @@
+# Sphinx documentation
+docs/_build/
+docs/build
+*.*~

@@ -1,3 +1,7 @@
+
+Contributors workflow
+=====================
+
 A normal git development workflow should be used with some
 considerations:
 
@@ -12,7 +16,7 @@ rejected. As a recommendation, use meaningful branches names, they are
 going to be public.
 
 How to contribute
-=================
+#################
 
 Freedomotic follows the `fork &
 pull <https://help.github.com/articles/using-pull-requests>`__ process
@@ -36,23 +40,24 @@ This process works as follows:
    the `known
    issues <http://freedomotic.myjetbrains.com/youtrack/issues>`__,
    please include the issue in the branch name (e.g. *fixing-Core-413*).
+   
    **Again, always develop on a branch.**
 4. When your proposed modifications are complete, you can generate a
    pull request, e.g. asking to merge *fixing-Core-413* into
-   freedomotic/master. This can be done by publishing your new local
+   **freedomotic/master**. This can be done by publishing your new local
    branch online in your repository fork
 
 ::
 
-    _git push origin BRANCHNAME_
+    git push origin BRANCHNAME
 
-To generate a pull-request just click the '*Create pull request*' button
+To generate a pull-request just click the **Create pull request** button
 on GitHub 6. Your pull request will be reviewed by Freedomotic
-Development Team, who will merge it into the main repository or ask for
+Development Team that will merge it into the main repository or ask for
 revisions.
 
 More Info
-=========
+#########
 
 If you are clueless the procedure described abouve is covered in full
 details with screenshots

@@ -11,6 +11,11 @@ Contents:
    
    How to set your development environment <getting-started/development-environment>
    Maven Quick Reference Sheet <getting-started/maven-reference-sheet>
+   
+.. toctree::
+   :caption: How to contribute
+   :maxdepth: 2
+   
    Contributors workflow <getting-started/contributors-workflow>
 
 .. toctree::
@@ -27,3 +32,5 @@ Contents:
    Plugin manifest and configuration <plugins/listen-to-events-programmatically>
    Security: Authentication and Authorization <plugins/security>
    Internationalization: translate your plugin <plugins/internationalization>
+   
+   

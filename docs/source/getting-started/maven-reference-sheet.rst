@@ -25,7 +25,7 @@ You can do it from command line using
     cd FREEDOMOTIC_ROOT
     java -jar framework/freedomotic-core/target/freedomotic-core/freedomotic.jar
 
-As alternative you can start **freedomotic-core** project from your
+As an alternative you can start **freedomotic-core** project from your
 favourite IDE.
 
 Compile and test your own plugin
@@ -34,7 +34,7 @@ Compile and test your own plugin
 *after doing changes to the plugin code...*
 
 This will compile your plugin and install it automatically into the
-Freedomotic runtime (freedomotic-core), ready to be started
+Freedomotic runtime (**freedomotic-core**) ready to be started
 
 ::
 
@@ -47,7 +47,7 @@ Upload your own plugin on the marketplace
 *share your own plugin in a convenient, easy to install, way*
 
 This will compile your own plugin, deploy it on online maven repository
-and publish the new artifact on the related freedomotic website
+and publish the new artifact on the related Freedomotic website
 marketplace page.
 
 ::
@@ -55,11 +55,11 @@ marketplace page.
     cd FREEDOMOTIC_ROOT/plugins/devices/YOUR_PLUGIN_NAME
     mvn clean deploy -P market -D username="name" -D password="password"
 
-more details at how to publish a plugin
+more details at how to publish a plugin.
 
-To know more about maven phases refer to article `Maven: introduction to
+To know more about maven phases refer to the article "`Maven: introduction to
 the
-lifecycle <https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html>`__
+lifecycle <https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html>`__"
 
-That's all. Open your favourite IDE and start the freedomotic-core
+That's all. Open your favourite IDE and start the **freedomotic-core**
 project to run Freedomotic on your PC.
