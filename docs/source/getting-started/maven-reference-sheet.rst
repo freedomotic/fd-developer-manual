@@ -1,9 +1,12 @@
+
+Maven quick reference sheet
+===========================
 Starting from version 5.5 Freedomotic build cycle is managed with Apache
 Maven. This quick reference explains how maven phases are bound to
 specific tasks:
 
 Priming build
-#############
+-------------
 
 *first time compile or to refresh the entire project and submodules*
 
@@ -16,7 +19,7 @@ base-objects, java-frontend, ...
     mvn clean install
 
 How to start Freedomotic
-########################
+------------------------
 
 You can do it from command line using
 
@@ -29,7 +32,7 @@ As an alternative you can start **freedomotic-core** project from your
 favourite IDE.
 
 Compile and test your own plugin
-################################
+--------------------------------
 
 *after doing changes to the plugin code...*
 
@@ -42,7 +45,7 @@ Freedomotic runtime (**freedomotic-core**) ready to be started
     mvn clean install
 
 Upload your own plugin on the marketplace
-#########################################
+-----------------------------------------
 
 *share your own plugin in a convenient, easy to install, way*
 

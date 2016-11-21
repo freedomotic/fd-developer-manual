@@ -7,7 +7,7 @@ To integrate new building automation protocols (eg: zwave, zigbee, knx,
 commands and viceversa.
 
 Read data from hardware
-#######################
+-----------------------
 
 Your plugin will read data from the protocol and translate them into
 Freedomotic events to be notified to the framework. The event you want
@@ -19,8 +19,8 @@ events </content/make-your-plugin-send-and-listen-events>`__ tutorial.
 To bind an event to a change of the status of a specific object on the
 Freedomotic environment map you have two ALTERNATIVE choices:
 
-1) Specify the target object new state in the notified event
-------------------------------------------------------------
+Specify the target object new state in the notified event
+---------------------------------------------------------
 
 High level communication protocols usually know if the readed value is a
 temperature, a binary state (true/false) or another kind of value. In
@@ -48,8 +48,8 @@ just notify the raw readed hardware value and convert it into a valid
 behavior value using an hardware trigger (data source); see option 2 to
 know more about this.
 
-2) Create an hardware trigger to be configured as the "Data sources" in the object settings
--------------------------------------------------------------------------------------------
+Create a hardware trigger to be configured as the "Data sources" in the object settings
+---------------------------------------------------------------------------------------
 
 You would choice this option if your communication protocol doesen't
 have the knowledge of object types. For example a relay board knows just
@@ -78,7 +78,7 @@ below:
    Configure data sources
 
 Write data to hardware
-######################
+----------------------
 
 Freedomotic can request something like this to your plugin **"turn on
 relay 1 on board at 192.168.1.100"**. Assuming the board communication
@@ -99,40 +99,16 @@ tasks take a look at the section `Properties received by a driver
 plugin <https://github.com/freedomotic/freedomotic/wiki/Commands#properties-received-by-a-driver-plugin>`__
 
 Plugin Samples
-##############
+--------------
 
 Take a look at the source code of these plugins to get inspiration
 
-SNMP Communication
-------------------
+- `SNMP Communication <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/hwg-ste>`_ A plugin to interact with SNMP (Simple Network Management Protocol) enabled devices
 
-A plugin communicating with SNMP - Simple Network Management Protocol
-(http://it.wikipedia.org/wiki/Simple\_Network\_Management\_Protocol)
-enabled devices
+- `FTDI Communication <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/usb4relaybrd>`_
 
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/hwg-ste
+- `UDP Communication <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/openpicus-grove-system>`_ Sending UDP packages to Open Picus devices
 
-FTDI Communication
-------------------
+- `I2C Communication <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/i2c>`_
 
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/usb4relaybrd
-
-UDP Communication
------------------
-
-Sending UDP packages to Open Picus devices
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/openpicus-grove-system
-
-I2C Communication
------------------
-
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/i2c
-
-MQTT Communication
-------------------
-
-Add a MQTT broker to Freedomotic
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/mqtt-broker
-
-Add a MQTT client
-https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/mqtt-client
+- `MQTT Communication <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/mqtt-client>`_ A MQTT client

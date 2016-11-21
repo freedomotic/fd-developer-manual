@@ -1,5 +1,5 @@
-Overview
-========
+P2P
+===
 
 Implementation of p2p synchronization of different Freedomotic
 instances. If you turn on a light in instanceA the change is reflected

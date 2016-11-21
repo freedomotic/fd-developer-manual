@@ -1,8 +1,9 @@
-Overview
-========
+
+Natural language processing
+===========================
 
 It takes in input some text, analyzes it to compute a similarity value
-related to a set of predefined objects available to the system (eg:
+related to a set of predefined objects available for the system (eg:
 automation commands)
 
 How to work
@@ -17,14 +18,13 @@ that computing similarity may be CPU intensive. Similarity may be
 computed with different algorithms. Our solution is based on
 `Damerau-Levenshtein
 distance <https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance>`__.
-View our `implemented
-class <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/main/java/com/freedomotic/nlp/NlpCommandStringDistanceImpl.java>`__.
+View our `implementation <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/main/java/com/freedomotic/nlp/NlpCommandStringDistanceImpl.java>`__.
 
 How to use it
 -------------
 
 The software listens to free-form (natural language) text commands on
-channel ``app.commands.interpreter.nlp`` and execute most similar
+channel ``app.commands.interpreter.nlp`` and executes most similar
 command that the framework has in memory. For example a speech
 recognition utility may return a free-form text that can be interpreted
 by this module as an executable command. Another example is a chat bot

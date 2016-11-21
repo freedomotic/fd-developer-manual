@@ -1,5 +1,6 @@
-How to use the serial helper
-============================
+
+Serial helper
+=============
 
 This service is based on `JSSC
 library <https://github.com/scream3r/java-simple-serial-connector>`__.
@@ -8,12 +9,12 @@ First of all you must create a new SerialHelper and set your `port
 parameters <http://en.wikipedia.org/wiki/Serial_port>`__ in the
 following order:
 
--  port name (*/dev/ttyUSBx* or */dev/ttyACMx* for Linux; *COMx* for
+-  **port name** (*/dev/ttyUSBx* or */dev/ttyACMx* for Linux; *COMx* for
    Windows)
--  baud rate
--  data bits
--  parity bit
--  stop bits
+-  **baud rate**
+-  **data bits**
+-  **parity bit**
+-  **stop bits**
 
 Also you can override *onDataAvailable(String data)* method to define
 how to manage read data. For example you can send received data to
@@ -67,5 +68,3 @@ Complete examples
 
 `Arduino USB
 plugin <https://github.com/freedomotic/freedomotic/blob/master/plugins/devices/arduinousb/src/main/java/com/freedomotic/plugins/devices/arduinousb/ArduinoUSB.java>`__
-###Source code###
-`SerialHelper.java <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/main/java/com/freedomotic/helpers/SerialHelper.java>`__

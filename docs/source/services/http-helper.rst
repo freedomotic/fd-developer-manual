@@ -1,5 +1,6 @@
-How to use HttpHelper
-=====================
+
+Http helper
+===========
 
 This helper retrieves url content (HTML,JSON,XML) as string by
 performing HTTP GET requests. It can also perform xpath queries on the

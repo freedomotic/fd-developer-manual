@@ -1,5 +1,6 @@
-How to use UdpHelper
-====================
+
+Udp helper
+==========
 
 This helper allows to start an UDP server listenig on a specific port
 and send UDP packets to a remote host.

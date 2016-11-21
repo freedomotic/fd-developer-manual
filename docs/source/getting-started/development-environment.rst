@@ -1,9 +1,9 @@
 
-Developers Quick Start
+Developers quick start
 ======================
 
 Requirements check
-##################
+------------------
 
 - **Java JDK:** version 8+ Openjdk/Oracle jdk (to install on Ubuntu: *sudo apt-get install openjdk-8-jdk*)
  
@@ -16,19 +16,19 @@ Development status:
 (released on 1 Jul 2016)
 
 Set your local development environment
-######################################
+--------------------------------------
 
 1) Fork Freedomotic on GitHub
 
 * Create an account on https://github.com if you don't have one
-* Fork Freedomotic following this link: https://github.com/freedomotic/freedomotic/fork
+* Fork Freedomotic repository following this link: https://github.com/freedomotic/freedomotic/fork
 * Create the local clone of your online fork with this command:
 
 .. code::
      
     git clone https://github.com/YOUR-GITHUB-USERNAME/freedomotic.git
    
-Now the repository is ready to work.
+Now you are ready to work.
 
 2) Enter the new local folder
 
@@ -62,7 +62,7 @@ If you experience compile or startup errors please refer to [Faq & Troubleshooti
 If you want to know more about plugins development, please take a look at this [Hello Word Examples](https://github.com/freedomotic/freedomotic/wiki/Freedomotic-%22Hello-World!%22)
 
 Git repository is an SDK
-########################
+------------------------
 
 The GIT repository is a complete SDK with all you need to code and test your Freedomotic plugins. Once compiled for the first time open the **freedomotic-core** project with your favourite IDE and start it to try Freedomotic.
 
@@ -71,7 +71,8 @@ To develop your own plugin you can start from the **hello-world** example projec
 Open it in your IDE, make some changes and compile. It will be automatically installed into the Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
 
 Javadoc
-#######
+-------
+
 Contains the Java code documentation. Here some useful section:
 
 * Package overview
@@ -82,6 +83,6 @@ Contains the Java code documentation. Here some useful section:
 * [freedomotic-model](http://www.emmecilab.net/freedomotic/model/site/apidocs/)
 
 Support
-#######
+-------
 
 Please join our `mailing list <https://groups.google.com/forum/#!forum/freedom-domotics>`_ and `share your experience <https://goo.gl/Iq8C6e>`_

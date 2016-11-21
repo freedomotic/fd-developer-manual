@@ -9,8 +9,8 @@ Contents:
    :caption: Getting started
    :maxdepth: 2
    
-   How to set your development environment <getting-started/development-environment>
-   Maven Quick Reference Sheet <getting-started/maven-reference-sheet>
+   Developers quick start <getting-started/development-environment>
+   Maven quick reference sheet <getting-started/maven-reference-sheet>
    
 .. toctree::
    :caption: How to contribute
@@ -33,4 +33,20 @@ Contents:
    Security: Authentication and Authorization <plugins/security>
    Internationalization: translate your plugin <plugins/internationalization>
    
+   
+.. toctree::
+   :caption: Things development
+   :maxdepth: 2
+   
+   Create new thing types <things/create-new-thing-types>
+   
+.. toctree::
+   :caption: Services
+   :maxdepth: 2
+   
+   Http helper <services/http-helper>
+   Serial helper <services/serial-helper>
+   Udp helper <services/udp-helper>
+   Natural language processing <services/natural-language-processing>
+   P2P <services/p2p>
    

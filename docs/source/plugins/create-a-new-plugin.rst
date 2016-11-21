@@ -1,6 +1,9 @@
 
+Create a new plugin
+###################
+
 From template
-#############
+-------------
 
 1. **Copy and paste the hello-world example you can find in
    GIT\_ROOT/plugins/devices/hello-world**. Open this project along with
@@ -17,7 +20,7 @@ From template
    folder diagram above)
 
 From an archetype
-#################
+-----------------
 
 Archetypes can help you to make the development of new plugins easier
 starting from a well-defined template. More info on
@@ -51,7 +54,7 @@ Please remember to rename the default Java class 'HelloWorld' as your
 plugin name.
 
 Behind the scene
-================
+----------------
 
 If you want to understand how the archetype works take a look
 `here <https://github.com/freedomotic/freedomotic/tree/master/tools/freedomotic-device-maven-archetype>`__
