@@ -9,7 +9,7 @@ capability to 'speak' different languages, just follow this simple guide
 to adapt your code.
 
 Adding localization support
-###########################
+---------------------------
 
 Freedomotic ships a mechanism for easily support localized strings and
 allows the developer to use a prebuild bag of general purpose strings.
@@ -25,11 +25,11 @@ A quick example
 
      // old code (non localized)
      LOG.info("Hello");
-     // new code
+     // new code (localized)
      LOG.info(i18n.msg("greeting"));
 
-Behind the scenes - what happens when calling i18n.msg() ?
-----------------------------------------------------------
+Behind the scenes - what happens when calling i18n.msg()?
+---------------------------------------------------------
 
 Freedomotic reads some system config to automatically guess user locale
 it searches proper localization string inside
@@ -37,9 +37,6 @@ it searches proper localization string inside
 
 if the current locale is not defined (translation doesn't exist) en\_UK
 is used and Freedomotic.properties is loaded
-
-Advanced usage
-##############
 
 Making custom plugin translations
 ---------------------------------
@@ -63,15 +60,17 @@ e.g.
 Accessing custom plugin translations
 ------------------------------------
 
-Just pass the current object as a parameter to i18n.msg()
+Just pass the current object as a parameter to ``i18n.msg()``
 
-``LOG.info("Plugin " + i18n.msg(this,"plug_name"));``
+.. code:: java
+
+   LOG.info("Plugin " + i18n.msg(this,"plug_name"));
 
 Composing strings
 -----------------
 
 Consider the following example: we want to translate "save environment
-as", "save object as", "save room as" and so on. he translation files
+as", "**save object as**", "**save room as**" and so on. The translation file
 looks like this
 
 +---------------+-----------------------+-----------------------+
@@ -86,9 +85,9 @@ using a concatenation of strings doesn't work,
 
 ``i18n.msg("save_as") + i18n.msg("environment";``
 
-it'll result in "save as environment" ...
+it'll result in "**save as environment**" ...
 
-We can then use basic java string format, like that
+We can then use basic Java string format, like that
 
 +---------------+-----------------------+-----------------------+
 | Key string    | Default translation   | it\_IT localization   |
@@ -98,7 +97,9 @@ We can then use basic java string format, like that
 | environment   | Environment           | Ambiente              |
 +---------------+-----------------------+-----------------------+
 
-``i18n.msg("save_as",new Object[]{i18n.msg(environment)});``
+.. code:: java
 
-So the second variable is given as replacement for placeholder {0}. This
+   i18n.msg("save_as",new Object[]{i18n.msg(environment)});
+
+So the second variable is given as replacement for placeholder **{0}**. This
 applies to many placeholders, not only one.

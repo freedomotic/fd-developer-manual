@@ -1,5 +1,6 @@
-Introduction
-============
+
+Commands
+========
 
 When you create a new command you can choose two different ways, the
 first is the creation of an xml file deployed in the
@@ -22,7 +23,7 @@ runtime by the user/configurator (and it will be saved in
 *FREEDOMOTIC\_ROOT/data/cmd* folder).
 
 Commands fields
-===============
+---------------
 
 Properties received by a `driver plugin </wiki/communicate-hardware-devices-driver-plugin>`__
 ---------------------------------------------------------------------------------------------
@@ -94,7 +95,7 @@ current state]* is performed
 -  say=Light one is on with brightness at 100%.
 
 The structure of a command
-==========================
+--------------------------
 
 Field\| Description -------\|------------------- name \| A short string
 that identifies the effect of the command execution (eg: turn on light
@@ -215,7 +216,7 @@ Decrease brightness (one step) of all Light type objects in the environment
     </command>
 
 Command Scripting
-=================
+-----------------
 
 Commands parameters can be scripted using javascript syntax like this:
 

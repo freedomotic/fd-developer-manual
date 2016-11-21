@@ -1,3 +1,7 @@
+
+Create new things types
+=======================
+
 To develop a new object type you have to create a Java extension which
 describes to the system the actions the new type of object is capable.
 
@@ -74,7 +78,7 @@ the setBrightness method will look like this
             }
 
 Predefined Behaviors
-====================
+--------------------
 
 Here is a list of ready to use behaviors to instantiate as object
 properties:
@@ -88,7 +92,7 @@ properties:
 +---------------------+-------------------------------------------------------+--------------------------------------------------------------+
 
 Load the object as a plugin
-===========================
+---------------------------
 
 As for any plugin the code must be compiled and it's jar file must be
 deployed in the FREEDOMOTIC\_ROOT/plugins/objects/OBJECT\_NAME\_FOLDER.
@@ -97,7 +101,7 @@ FREEDOMOTIC\_ROOT/plugins/objects/ subfolders regardless their names.
 Object doesn't require an XML configuration files.
 
 Create instances of your new object type
-========================================
+----------------------------------------
 
 Now Freedomotic knows how this type of object behaviors on particular
 inputs. Then you have to provide xobj files that describe the instances
@@ -138,7 +142,7 @@ TODO: add a general description ###Common properties section###
 +-------------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 Behaviors section
-=================
+#################
 
 In this section, the objects behaviors are configured. Each behavior
 name must match the same name that is used inside the object code. To

@@ -1,6 +1,6 @@
 
-Handle errors
-=============
+Handle plugin errors
+====================
 
 When a plugin throws an exception, the related end user messaging can be
 handled automatically, for example setting the plugin description

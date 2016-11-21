@@ -46,6 +46,4 @@ More info about these properties:
 | object.address    | 1234                | (OPTIONAL) The address string (it's protocol dependent)                                                                                                           |
 +-------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**NOTE: omitting object.class and object.name properties makes the
-ProtocolRead event to be discarded if no such thing exists. If the thing
-exists the state change described in the event is applied.**
+.. note:: Omitting object.class and object.name properties makes the ProtocolRead event to be discarded if no such thing exists. If the thing exists the state change described in the event is applied.

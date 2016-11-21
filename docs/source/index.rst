@@ -26,7 +26,7 @@ Contents:
    Freedomotic APIs <plugins/api>
    Bind things state to hardware data <plugins/bind-things-state-to-hardware-data>
    Bind things state to web services data <plugins/bind-things-state-to-web-services-data>
-   Handle errors <plugins/handle-plugin-errors>
+   Handle plugin errors <plugins/handle-plugin-errors>
    Listen to Events programmatically <plugins/listen-to-events-programmatically>
    Autodiscover and Autoconfigure things <plugins/autodiscovering>
    Plugin manifest and configuration <plugins/listen-to-events-programmatically>
@@ -40,6 +40,15 @@ Contents:
    
    Create new thing types <things/create-new-thing-types>
    
+.. toctree::
+   :caption: Rules
+   :maxdepth: 2
+   
+   Events <rules/events>
+   Triggers <rules/triggers>
+   Commands <rules/commands>
+   Reactions (aka Automations) <rules/automations>
+
 .. toctree::
    :caption: Services
    :maxdepth: 2

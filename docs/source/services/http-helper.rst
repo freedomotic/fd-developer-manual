@@ -2,8 +2,8 @@
 Http helper
 ===========
 
-This helper retrieves url content (HTML,JSON,XML) as string by
-performing HTTP GET requests. It can also perform xpath queries on the
+This helper retrieves url content (html, json, xml) as string by
+performing http GET requests. It can also perform xpath queries on the
 retrieved content.
 
 Let's start with an example. We want to retrieve the temperature in Rome
@@ -39,8 +39,8 @@ IO exceptions
       //handle exception here
     }
 
-Perform XPath queries on a URL content
---------------------------------------
+Perform XPath queries on an URL content
+---------------------------------------
 
 In this example we are quering an XML Rest API to retrieve the current
 temperature in Rome and the related unit in which the temperature value

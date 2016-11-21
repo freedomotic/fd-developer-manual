@@ -1,3 +1,5 @@
+
+
 This feature is useful to allow device plugins to create fully
 customized objects using autodiscovery feature. The object can come with
 the right mapping in Data sources/Actions or you can even change its
@@ -13,10 +15,10 @@ To test it
 3. change the name of this file to mytemplate.xobj and change xml name
    tag to ``<name>My Test Template</name>``
 
-4. recompile "essential" plugin to have these changes installed in
-   freedomotic-core
+4. recompile **essential** plugin to have these changes installed in
+   **freedomotic-core**
 
-5. run freedomotic-core.
+5. run **freedomotic-core**.
 
 Now enter objects Edit mode, you should see a new template in the list
 called "My Test Template" which is provided by a device plugin instead

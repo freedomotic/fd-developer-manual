@@ -1,5 +1,6 @@
-What are events
-===============
+
+Events
+======
 
 As you learned in the "freedomotic anatomy" section, that you have
 already red for sure ;), freedomotic (and its plugins) send events when
@@ -16,7 +17,7 @@ have a set of standard properties plus a list of properties related to
 the specific event. Common properties are:
 
 Generic Event Parameters
-========================
+------------------------
 
 The following parameters are common to all events and can be intercepted
 and filtered by any trigger:
@@ -41,8 +42,8 @@ and filtered by any trigger:
 | sender         |                   | The name of the module that have generated the event             |
 +----------------+-------------------+------------------------------------------------------------------+
 
-More info in Javadocs
-=====================
+More info in Javadoc
+--------------------
 
 For event specific data please refer to the Javadocs of the event
 classes

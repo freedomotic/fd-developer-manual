@@ -1,5 +1,6 @@
-What is a Trigger
-=================
+
+Triggers
+========
 
 A trigger is a filter that permits to intercept an Event on a Channel.
 It performs check on the event carried values and tags this particular
@@ -23,7 +24,7 @@ graphical editor, so there is no need to edit the XML manually. The
 graphical editor as final result produces an XML like this.
 
 How to filter events using triggers
-===================================
+-----------------------------------
 
 Events can be intercepted using triggers. Every event has a default
 channel on which it is notified. To know which is the default channel of
@@ -35,8 +36,8 @@ the **PersonMoving** event is published on channel
 To intercept a person's movement you can define a trigger listening to
 channel ``app.event.sensor.person.movement.moving``.
 
-XML Example
-===========
+XML example
+-----------
 
 This trigger can filter PersonExitZone events. In that case the trigger
 fires only if the event is related to the kitchen zone and the person ID
@@ -76,7 +77,7 @@ trigger and commands to execute is called Reaction
     </trigger>
 
 How to filter received event parameters
-=======================================
+---------------------------------------
 
 As said before a trigger is a event filter. It can read event parameters
 and filter they according to the rules defined in the trigger. Every
@@ -180,13 +181,13 @@ The wildcard semantic is as follows:
    starting from this name
 
 Trigger scripting
-=================
+-----------------
 
 TODO example at
 https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/test/java/com/freedomotic/core/ResolverTest.java
 
 Deploy of a trigger
-===================
+-------------------
 
 Triggers are deployed in the *FREEDOMOTIC\_ROOT/data/trg* folder. They
 are files with .xtrg extension. Triggers in this folder are loaded at
@@ -194,7 +195,7 @@ Freedomotic startup. In the console you can have a view of the loaded
 triggers and the channel on which they are listening.
 
 Examples
-========
+--------
 
 An object of type Electric Device is clicked
 

@@ -1,9 +1,10 @@
+
+Reactions (aka Automations)
+===========================
+
 Reactions are based on the concept of
 `Channel <https://github.com/freedomotic/freedomotic/wiki/The-Channels-Concept>`__,
 so be sure to have understood this concept before continue reading.
-
-Introduction
-============
 
 A reaction consists of a trigger and one or more commands. The commands
 in a list are executed sequentially. The reactions run in parallel
