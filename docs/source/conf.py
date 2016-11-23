@@ -170,6 +170,7 @@ todo_include_todos = False
 html_static_path = ['_static']
 html_context = {
     'css_files': [
+        'https://media.readthedocs.org/css/badge_only.css',
         '_static/custom.css',  # css overrides
         ],
     }
