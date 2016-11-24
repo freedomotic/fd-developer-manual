@@ -6,7 +6,7 @@ When you create a new command you can choose two different ways, the
 first is the creation of an xml file deployed in the
 *FREEDOMOTIC\_ROOT/data/cmd* folder, the second option is to use the
 **EventEditor** plugin. The first choice is the better for developers
-because it guarantees full control of the values because the EventEditor
+because it guarantees full control of the values because the **EventEditor**
 is still under development.
 
 A Freedomotic command is a container of customizable parameters in the
@@ -28,12 +28,12 @@ Commands fields
 Properties received by a `driver plugin </wiki/communicate-hardware-devices-driver-plugin>`__
 ---------------------------------------------------------------------------------------------
 
--  @owner.\ *: all object properties and behaviors with the value they
+-  @owner.\*: all thing properties and behaviors with the value they
    had before automation execution. If an automation rises the light
-   brightess values, the property @owner.object.behavior.brightness
-   *\ contains the starting value not the target value\*. **This is
-   received only by driver like plugins.**
--  +Any plugin specific property, defined in the xml command in data/cmd
+   brightess values, the property ``@owner.object.behavior.brightness``
+   contains the starting value not the target value. **This is
+   received only by driver plugins.**
+-  +Any plugin specific property, defined in the xml command into *data/cmd*
    folder of the plugin itself.
 
 An example (turn on X10 device)
@@ -97,7 +97,7 @@ current state]* is performed
 The structure of a command
 --------------------------
 
-Field\| Description -------\|------------------- name \| A short string
+Field| Description -------\|------------------- name \| A short string
 that identifies the effect of the command execution (eg: turn on light
 in the kitcken) description \| An extended description of the effect of
 the command execution. Write it in form "IF an event occurs THEN the
@@ -114,8 +114,11 @@ predefined set of properties keys. Any plugin can have is own set of
 keys, what decides the keys a plugin respond to is just the code you
 write in the onCommand() method implementation.
 
+Command examples
+----------------
+
 Turn on object named "livingroom light"
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: xml
 
@@ -134,8 +137,8 @@ Turn on object named "livingroom light"
       </properties>
     </command>
 
-Switch power of all Light type objects in all environments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Switch power of all Light type things in all environments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: xml
 
@@ -175,8 +178,8 @@ Switch power of all Light type objects in room named 'Kitchen'
       </properties>
     </command>
 
-Increase brightness (one step) of all Light type objects in the environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Increase brightness (one step) of all Light type things in the environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: xml
 
@@ -195,8 +198,8 @@ Increase brightness (one step) of all Light type objects in the environment
       </properties>
     </command>
 
-Decrease brightness (one step) of all Light type objects in the environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Decrease brightness (one step) of all Light type things in the environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: xml
 

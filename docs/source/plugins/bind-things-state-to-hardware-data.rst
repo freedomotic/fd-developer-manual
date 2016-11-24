@@ -48,8 +48,8 @@ just notify the raw readed hardware value and convert it into a valid
 behavior value using an hardware trigger (data source); see option 2 to
 know more about this.
 
-Create a hardware trigger to be configured as the "Data sources" in the object settings
----------------------------------------------------------------------------------------
+Create a hardware trigger to be configured as the "Data sources" in the thing settings
+--------------------------------------------------------------------------------------
 
 You would choice this option if your communication protocol doesen't
 have the knowledge of object types. For example a relay board knows just
@@ -94,9 +94,9 @@ method of your plugin, here you should parse the command parameters with
 
 and create the corresponding protocol specific request.
 
-To know which variables are available to you plugin to perform it's
+To know which variables are available to you plugin to perform its
 tasks take a look at the section `Properties received by a driver
-plugin <https://github.com/freedomotic/freedomotic/wiki/Commands#properties-received-by-a-driver-plugin>`__
+plugin <../rules/commands>`__
 
 Plugin Samples
 --------------
