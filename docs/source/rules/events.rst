@@ -2,19 +2,17 @@
 Events
 ======
 
-As you learned in the "freedomotic anatomy" section, that you have
-already red for sure ;), freedomotic (and its plugins) send events when
-anything relevant happens. Thake a look at `this
-diagram </images/wiki/objects.png>`__
+Freedomotic and its plugins send events when anything relevant happens.
 
-Any event is sent on a messaging channel. A channels address is a simple
-string with a hierarchical structure like
-app.sensors.event.object.behavior.changed. You can subscribe an event
-channel from a trigger, which is a filter of events. For example if your
-event is "an object changed state" you can filter it using a trigger "if
-a light in the kitchen changed it's powered state". Freedomotic events
-have a set of standard properties plus a list of properties related to
-the specific event. Common properties are:
+Any event is sent on a **messaging channel**. A channel address is a simple
+string with a hierarchical structure like ``app.sensors.event.object.behavior.changed``. 
+
+You can subscribe an event channel from a trigger which is a filter of events. For example if your
+event is "**an object changed state**" you can filter it using a trigger "**if
+a light in the kitchen changed its powered state**". 
+
+Freedomotic events have a set of standard properties plus a list of properties related to
+the specific event.
 
 Generic Event Parameters
 ------------------------
