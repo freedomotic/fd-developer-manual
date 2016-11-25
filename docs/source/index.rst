@@ -6,6 +6,15 @@ Freedomotic Developer Manual
 Contents:
 
 .. toctree::
+   :caption: The Project
+   :maxdepth: 2
+   
+   What is Freedomotic? <the-project/what-is-freedomotic>
+   The project history <the-project/project-history>
+   Team <the-project/team>
+   Features <the-project/features>
+
+.. toctree::
    :caption: Getting started
    :maxdepth: 2
    
