@@ -1,7 +1,7 @@
-The Channels
-============
+Channels
+========
 
-The concept of channel is central to the operation of the messaging
+The concept of **channel** is central to the operation of the messaging
 system. On channel are published events and commands. Events are
 notified by a sensor plugin. From Freedomotic’s point of view a sensor
 is composed of an hardware device and a software connected to the
@@ -23,15 +23,15 @@ the movement of all people detected in the environment.
 
 The wildcard semantic is as follows:
 
--  period (.) is used to separate names in a path
--  asterisk (\*) is used to match any name in a path
--  greater than sign (>) is used to recursively match any destination
-   starting from this name
+-  **period (.)** is used to separate names in a path
+-  **asterisk (\*)** is used to match any name in a path
+-  **greater than sign (>)** is used to recursively match any destination starting from this name
 
-A trigger is a filter that can be used to decide whether a notified
+A **trigger** is a filter that can be used to decide whether a notified
 event has to be processed or not. Whenever an event is processed by a
-trigger, the associated reaction is executed. A reaction represents a
-link between a trigger and one or more command list executed by an
+trigger, the associated reaction is executed.
+
+A **reaction** represents a link between a trigger and one or more command list executed by an
 actuator or another sensing system.
 
 A reaction allows controlling the processing flow the of commands,
@@ -60,7 +60,7 @@ with. Such files are automatically loaded and saved to file by the
 middleware, ensuring data consistency.
 
 Channel Examples
-================
+----------------
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Trigger subscription (to a Channel)                                                                                                                                                  | Description                                                                                            |

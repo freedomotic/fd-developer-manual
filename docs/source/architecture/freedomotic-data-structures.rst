@@ -1,5 +1,8 @@
-If you plan to develop a plugin for Freedomotic you need to access the
-framework data structures.
+
+Data structures
+===============
+
+If you plan to develop a plugin for Freedomotic you need to access the framework data structures.
 
 These types of data are concerned with building automation and
 Freedomotic architecture:
@@ -10,11 +13,10 @@ Freedomotic architecture:
 4. Loaded plugins and extensions
 
 Environment topology
-====================
+####################
 
 Environment data are accessible by the static reference. It returns the
-Environment object instance which gives you access to all the
-environment properties
+Environment thing instance which gives you access to all the environment properties
 
 .. code:: java
 
@@ -34,33 +36,34 @@ the list of physical environment rooms use (rooms are zones too)
 
         Freedomotic.environment.getRooms()
 
-Environment objects
-===================
+Environment things
+------------------
 
-The objects (lights, doors, couches, ...) in the environment can be
-retrived using: ###Get an object by name (returns null if is not in the
-list)
+The things (lights, doors, couches, ...) in the environment can be retrived in different ways.
+
+Get a thing by its name
+-----------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObject(String name)
 
-Get the objects filtering by protocol and address property
-----------------------------------------------------------
+Get the things filtering by protocol and address property
+---------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObject(String protocol, String address)
 
-Get the list of objects that are linked to a protocol
------------------------------------------------------
+Get the list of the things linked to a specific protocol
+--------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObjectByProtocol(String protocol)
 
-Get the list of all objects in the current environment
-------------------------------------------------------
+Get the list of all things in the current environment
+-----------------------------------------------------
 
 .. code:: java
 
@@ -73,7 +76,7 @@ This is the correct import to access this method
     import com.freedomotic.objects.EnvObjectPersistence;
 
 Plugins
-=======
+#######
 
 Get the list of loaded plugins
 ------------------------------
@@ -122,7 +125,7 @@ read tuples properties from config file:
         double myVar = tuple.getDoubleProperty(tupleIndex, "PROPERTY-NAME", 1.5f);
         String myVar = tuple.getStringProperty(tupleIndex, "PROPERTY-NAME", "some text");
 
-Get received Command parameters
+Get received command parameters
 -------------------------------
 
 The onMessage method has a *Command c* parameter. Is possible to access
@@ -133,7 +136,7 @@ the received parameters this way:
     String saveItInAVariable = c.getProperty("COMMAND-PARAM-NAME");
 
 Accessing Data Structures from Crosslanguage Plugins
-====================================================
+####################################################
 
 This is done through a REST connection which serves this data. More info
 at https://github.com/freedomotic/freedomotic/wiki/Freedomotic-APIs.

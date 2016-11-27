@@ -2,9 +2,9 @@
 Plugins manifest and configuration
 ==================================
 
-Every Java plugin needs an XML manifest file to describe the plugin to Freedomotic. As multiple plugins can be in the same plugin package (the one you download from the marketplace) then more than one manifest file can be in the root folder of a plugin package.
+Every plugin needs a XML manifest file to describe its configuration. As multiple plugins can be in the same package (the one you download from the marketplace) then more than one manifest file can be in the root folder of a plugin package.
 
-In Java you bind your plugin to its manifest in the class Constructor this way:
+The binding is made in the class constructor with
 
 .. code:: java
 
@@ -12,9 +12,9 @@ In Java you bind your plugin to its manifest in the class Constructor this way:
      super("Hello World Sensor" ,"/firstsensor/first-sensor-manifest.xml");
    }
 
-The manifest filename is defined in the plugin constructor (in this case *first-sensor-manifest.xml*). 
+In this example the manifest file is *first-sensor-manifest.xml* located into *firstsensor* folder. 
 
-The path is case sensitive so */firstsensor/first-sensor-manifest.xml* is not the same as "/FirstSensor/First-Sensor-Manifest.xml".**
+The path is case sensitive so */firstsensor/first-sensor-manifest.xml* is not the same as */FirstSensor/First-Sensor-Manifest.xml".*
 
 What's inside the manifest
 --------------------------
@@ -32,12 +32,12 @@ This is an example of the most simple manifest file you can have:
       </properties>
    </config>
 
-Every plugin has a unique input **Messaging Channel** used for message exchange; it is addressed using the info you put in the manifest file.
+Every plugin has an unique input **Messaging Channel** used for message exchange; it is addressed using the info you put in the manifest file.
 For plugins the Channel name is: ``app.actuators.CATEGORY.SHORT-NAME.in``.
 
-The manifest file is the **ONLY** place where you should add configuration parameters for your plugin. You should not use external files; the manifest is all you need to include complex configuration options that can be changed at runtime using a Freedomotic frontend.
+The manifest file is the **ONLY** place where you should add configuration parameters for your plugin. You should not use external files.
 
-**You can add custom properties to this list. The properties can be retrieved programmatically this way:**
+You can add custom properties to this list. The properties can be retrieved programmatically this way:
 
 .. code:: java
 
@@ -48,7 +48,7 @@ The manifest file is the **ONLY** place where you should add configuration param
 Add configuration blocks to your plugin
 ---------------------------------------
 
-**If you have to configure multiple the same set of properties for different objects (eg: URL and port of a set of hardware boards) you can use tuples.**
+If you have to configure multiple the same set of properties for different things (eg: URL and port of a set of hardware boards) you can use **tuples**.
 
 You can add as many <tuple></tuple> blocks as you need. The <tuples></tuples> block may be added after <properties></properties> on the same hierarchical level. Tuples are useful to have configuration data specific for you plugin to be loaded in Freedomotic at startup. Related configuration data can be stored in blocks called tuple.
 
@@ -80,5 +80,6 @@ You can add as many <tuple></tuple> blocks as you need. The <tuples></tuples> bl
      </tuples>
 
 
-This data is automatically available to your plugin. You can use free custom strings for the attribute name and the value. To read these tuples variables programmatically see the [Data Access Freedomotic Data page]
+You can use free custom strings for the attribute name and the value. 
+
 

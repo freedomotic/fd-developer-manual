@@ -48,11 +48,10 @@ previous scenary.
 Composing triggers in automations (extra-conditions)
 ----------------------------------------------------
 
-This means is possible to create automations like "**IF [it's morning] AND
-[livingroom light is on] THEN [do something]**".
+This means is possible to create automations like ``IF [it's morning] AND [livingroom light is on] THEN [do something]``.
 
-The **extra conditions** feature is represented by "**AND [livingroom
-light is on]**" part which allows you to lookup for the current value of any
+The **extra conditions** feature is represented by ``AND [livingroom
+light is on]`` part which allows you to lookup for the current value of any
 object on the map to create additional conditions which are evaluated
 before your automation is executed. 
 
@@ -60,8 +59,8 @@ There is still no frontend support for this feature, you should define it in XML
 the **data/rea** folder (is the folder which contains the
 **automations**, AKA **reactions**).
 
-Here an example "**WHEN a door is clicked AND livingroom light is on OR
-kitchen light is on THEN switch the open state of the clicked door**":
+Here an example ``WHEN a door is clicked AND livingroom light is on OR
+kitchen light is on THEN switch the open state of the clicked door``
 
 .. code:: xml
 

@@ -8,8 +8,8 @@ Any event is sent on a **messaging channel**. A channel address is a simple
 string with a hierarchical structure like ``app.sensors.event.object.behavior.changed``. 
 
 You can subscribe an event channel from a trigger which is a filter of events. For example if your
-event is "**an object changed state**" you can filter it using a trigger "**if
-a light in the kitchen changed its powered state**". 
+event is "**an object changed state**" you can filter it using a trigger ``if
+a light in the kitchen changed its powered state``. 
 
 Freedomotic events have a set of standard properties plus a list of properties related to
 the specific event.
@@ -46,7 +46,7 @@ More info in Javadoc
 For event specific data please refer to the Javadocs of the event
 classes
 http://freedomotic.com/javadoc/it/freedomotic/events/package-summary.html
-Otherwise you can take a look at the freedomotic log (LogViewer Plugin)
+Otherwise you can take a look at the Freedomotic log (LogViewer plugin)
 to see the paramentes embedded into a received event.
 
 For example this is the list of properties available to a trigger that

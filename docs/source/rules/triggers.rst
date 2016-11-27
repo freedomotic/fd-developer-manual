@@ -188,8 +188,8 @@ TODO ADD EXAMPLES TAKEN FROM
 
 https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/test/java/com/freedomotic/core/ResolverTest.java
 
-Deploy of a trigger
--------------------
+Deploy a trigger
+----------------
 
 Triggers are deployed in the *FREEDOMOTIC\_ROOT/data/trg* folder. They
 are files with **.xtrg** extension and are loaded at Freedomotic startup.

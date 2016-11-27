@@ -192,10 +192,10 @@ trigger as a template.
     </trigger>
 
 In an automation you bind a trigger to one or more commands. In this case
-the automation is "*WHEN Livingroom Light turns on THEN Say electric
+the automation is "**WHEN Livingroom Light turns on THEN Say electric
 device status**".
 
-The command "Say electric device status" is shipped with the text to
+The command ``Say electric device status`` is shipped with the text to
 speech plugin (http://freedomotic.com/content/plugins/text-speech) and
 looks like this:
 
@@ -232,7 +232,7 @@ freedomotic before sending it to the text to speech plugin:
 
 .. code:: xml
 
-    <com.freedomotic.reactions.Command>
+    <command>
       <name>Say electric device status [EVALUATED]</name>
       <description>say electric device status</description>
       <receiver>app.actuators.media.tts.in</receiver>
@@ -266,4 +266,4 @@ freedomotic before sending it to the text to speech plugin:
           <property name="current.object.powered" value="false"/>
         </properties>
       </properties>
-    </com.freedomotic.reactions.Command>
+    </command>
