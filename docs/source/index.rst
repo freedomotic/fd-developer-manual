@@ -28,9 +28,18 @@ Contents:
    Contributors workflow <getting-started/contributors-workflow>
 
 .. toctree::
+   :caption: Architecture
+   :maxdepth: 2
+   
+   Architecture components <architecture/architecture>
+   Messaging system <architecture/messaging-system>
+   Data structures <architecture/freedomotic-data-structures>
+
+.. toctree::
    :caption: Plugins development
    :maxdepth: 2
    
+   What is a plugin? <plugins/what-is-a-plugin>
    Create a new plugin <plugins/create-a-new-plugin>
    Freedomotic APIs <plugins/api>
    Bind things state to hardware data <plugins/bind-things-state-to-hardware-data>

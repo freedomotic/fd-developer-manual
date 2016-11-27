@@ -1,4 +1,4 @@
-Architecture Components
+Architecture components
 =======================
 
 Freedomotic is primarily a programming framework for automation and
@@ -6,16 +6,17 @@ control of environments whose purpose is to reduce drastically
 time-to-market and effort necessary for the development of automation
 applications. This is possible by noting that every automation system
 will require common functionalities regardless of the scope (home,
-business, industrial, hotel, telemedicine, etc. ...). Freedomotic is
-composed by a core (the framework) plus some plugins.
+business, industrial, hotel, telemedicine, etc).
+
+Freedomotic is composed by a **core** (the framework) and some **plugins**.
 
 .. figure:: http://freedomotic.com/images/wiki/architecture-layers.png
    :alt: Freedomotic architecture
 
    Freedomotic architecture
 
-The Framework
-=============
+The framework
+#############
 
 -  Mantains an internal data structure representing the environment
    (topology, room connectrions, ...), the objects in it and their state
@@ -34,11 +35,11 @@ The Framework
    delete this automations at runtime using GUIs, without the need of
    coding.
 
-The Plugins
-===========
+The plugins
+###########
 
-Devices plugins
----------------
+Device plugins
+--------------
 
 Freedomotic plugins can add more features to the framework and can be
 developed and distributed as completely independent packages on our
@@ -47,8 +48,8 @@ hardware like X10, KNX and so on, but also graphical frontends and "web
 service readers" are Freedomotic plugins just as any other source of
 info, like webcams, text to speech engines and SMS senders.
 
-Objects plugins
----------------
+Object plugins
+--------------
 
 You can also develop `object
 plugins <https://github.com/freedomotic/freedomotic/wiki/Create-new-object-types>`__
@@ -65,8 +66,8 @@ dimmed > 0%* the lamp is *powered=true*.
 
    Plugins Messaging
 
-Plugins, Object and Automations interaction
-===========================================
+Plugins, things and automations interaction
+###########################################
 
 Here is a diagram which explains the interaction between plugins,
 events+triggers+commands, and freedomotic APIs

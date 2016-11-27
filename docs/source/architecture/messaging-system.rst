@@ -1,26 +1,29 @@
 Freedomotic Messaging System
 ============================
 
-Freedomotic uses simple structured messages (XML, JSON) to comunicate
-with its components. This is done through a Messaging Middleware (Apache
-ActiveMQ).
+Freedomotic uses simple structured messages (xml, json) to comunicate
+with its components. This is done through a **Messaging Middleware** (**Apache
+ActiveMQ**).
 
-Freedomotic is based entirely on events, and any changes in the
-environment and any user interaction (eg: a click on the GUI) generate
-events. Events are published on Channels and can be intercepted by
-Triggers. Each trigger may be associated with one or more Commands,
-defining an Automation.
+Freedomotic is based entirely on events and any change in the
+environment and any user interaction (eg: a click on the GUI) generates
+events. 
+
+**Events** are published on **channels** and can be intercepted by
+**triggers**. 
+
+Each trigger may be associated with one or more commands
+defining a **reaction** or **automation**.
 
 From this architecture it follows that the program behavior is not
 predetermined but is fully modificable at runtime, making it extremely
 flexible and adaptable to any possible use in building automation.
 
-A sensor communicates a change in the environment sending out an event.
-Events are sent on Channels.
+When sensor communicates a change in the environment it sends out an event.
 
 A trigger, which is a sort of event filter, listens to the event
 subscribing the channel on which this event is sent. If the event is
-consistent with the trigger, one or more commands will be executed. The
+consistent with the trigger one or more commands will be executed. The
 command is automatically sent to the actuator which is able to execute
 it.
 
@@ -38,7 +41,9 @@ automation. In this case the automation is "if luminosity is less than
 
 Notes: Triggers and commands are defined by the user using the graphical
 EventEditor. Triggers, Commands and Automations are saved as XML files.
-##A Message Journey##
+
+A Message Journey
+#################
 
 The communication process of notification of an event to the execution
 of a command consists of several steps: Event? (notified by plugins or
@@ -153,7 +158,7 @@ changed:
 You can define triggers to narrow any event just by listening on the
 event channel and setting a list of conditions (the statements) that
 must be met in order to consider this trigger as fired. The trigger can
-then be used as the "when/if" part of an automation (aka scenery).
+then be used as the "**WHEN/IF**" part of an automation (aka **scenario**).
 
 Freedomotic starts with a set of predefined triggers which cover most
 use cases. At any time you can add new use cases using an existing
@@ -166,14 +171,14 @@ trigger as a template.
       <channel>app.event.sensor.object.behavior.change</channel>
       <payload>
         <payload>
-          <com.freedomotic.reactions.Statement>
+          <statement>
             <logical>AND</logical>
             <attribute>object.name</attribute>
             <!-- allowed operand are EQUALS, REGEX, GREATER_THEN, GREATER_EQUAL_THEN, LESS_THEN, LESS_EQUAL_THEN -->
             <operand>EQUALS</operand>
             <value>Livingroom Light</value>
-          </com.freedomotic.reactions.Statement>
-          <com.freedomotic.reactions.Statement>
+          </statement>
+          <statement>
             <logical>AND</logical>
             <attribute>powered</attribute>
             <operand>EQUALS</operand>
@@ -181,14 +186,14 @@ trigger as a template.
             <!-- here you can write false to select only 'turns off' cases -->
             <!-- ANY is used to match any case -->
             <value>ANY</value>
-          </com.freedomotic.reactions.Statement>
+          </statement>
         </payload>
       </payload>
     </trigger>
 
-In automation you binnd a trigger to one or more commands. In this case
-the automation is *"when Livingroom Light turns on then Say electric
-device status"*
+In an automation you bind a trigger to one or more commands. In this case
+the automation is "*WHEN Livingroom Light turns on THEN Say electric
+device status**".
 
 The command "Say electric device status" is shipped with the text to
 speech plugin (http://freedomotic.com/content/plugins/text-speech) and
