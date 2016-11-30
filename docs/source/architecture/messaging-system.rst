@@ -27,43 +27,45 @@ consistent with the trigger one or more commands will be executed. The
 command is automatically sent to the actuator which is able to execute
 it.
 
--  A sensor can be an hardware device like a luminosity sensor.
--  An event is fired by a sensor, for example "luminosity in the kitchen
-   is 30%"
--  A trigger can define an expression like "if luminosity is less than
-   50%"
--  A command can be something like "turn on the light in the kitchen"
--  An actuator can be an X10 Lamp module
+-  A sensor can be an hardware device like a luminosity sensor
+-  An event is fired by a sensor, for example ``luminosity in the kitchen
+   is 30%``
+-  A trigger can define an expression like ``if luminosity is less than
+   50%``
+-  A command can be something like ``turn on the light in the kitchen``
+-  An actuator can be relais board
 
 The result of the interaction between event, trigger and command is an
-automation. In this case the automation is "if luminosity is less than
-50% turn on the light in the kitchen"
+automation. In this case the automation is ``if luminosity is less than
+50% turn on the light in the kitchen``.
 
-Notes: Triggers and commands are defined by the user using the graphical
-EventEditor. Triggers, Commands and Automations are saved as XML files.
+.. note:: Triggers and commands are defined by the user using the **Jfrontend** graphical **EventEditor**. Triggers, commands and automations are saved as XML files.
 
 A Message Journey
 #################
 
 The communication process of notification of an event to the execution
-of a command consists of several steps: Event? (notified by plugins or
-freedomotic itself) -> Trigger (acting as a filter of events to define
-simple use cases) -> Command (executed by an actuator)
+of a command consists of several steps:
 
-In this example we will analyze an automation Automation composed of a
-single command:
+**Event** (notified by plugins or
+Freedomotic itself) -> **Trigger** (acting as an events filter to define
+simple use cases) -> **Command** (executed by an actuator)
 
-If 'Livingroom light turns on or off' then 'say its status using text to
-speech' What happens in the framework
+In this example we will analyze an automation composed by a
+single command: ``IF Livingroom light turns on THEN say its status using text to
+speech``
+
+What happens in the framework?
 
 This is an event which describes a state change of a light which turns
 from OFF (powered=false) to ON (powered=true). This kind of events is
-notified on channel app.event.sensor.object.behavior.change by a sensor
-plugin, for example an X10 sensor.
+notified on channel ``app.event.sensor.object.behavior.change`` by a sensor
+plugin for example a Modbus sensor.
 
 Events can be notified by hardware protocol plugins, frontends or
-freedomotic itself as in this case. Here is an example event which
-informs all listeners that an object named "Livingroom Light" has
+Freedomotic itself as in this case.
+
+Here is an example event which informs all listeners that a thing named **Livingroom Light** has
 changed:
 
 .. code:: xml
@@ -192,8 +194,7 @@ trigger as a template.
     </trigger>
 
 In an automation you bind a trigger to one or more commands. In this case
-the automation is "**WHEN Livingroom Light turns on THEN Say electric
-device status**".
+the automation is ``WHEN Livingroom Light turns on THEN Say electric device status``.
 
 The command ``Say electric device status`` is shipped with the text to
 speech plugin (http://freedomotic.com/content/plugins/text-speech) and
@@ -201,7 +202,7 @@ looks like this:
 
 .. code:: xml
 
-    <com.freedomotic.reactions.Command>
+    <command>
       <name>Say electric device status</name>
       <description>say electric device status</description>
       <receiver>app.actuators.media.tts.in</receiver>
@@ -216,19 +217,21 @@ looks like this:
         </properties>
         <tuples/>
       </properties>
-    </com.freedomotic.reactions.Command>
+    </command>
 
 When a trigger is fired Freedomotic loads all related commands and
 evaluates them using runtime properties. So the command above will look
-like this when received by the TTS plugin.
+like this when received by the **TTS Text to Speech** plugin.
 
 Every plugin has access to time and date information, the set of
 properties defined in the event and the current object state if the
 event has something to do with environment objects (in this case a
-light). Your plugin can use all this information for token substitution
+light).
+
+Your plugin can use all this information for token substitution
 and scripting as for the 'say' property in the command above. In the
 command below you can see how the 'say' property is evaluated by
-freedomotic before sending it to the text to speech plugin:
+Freedomotic before sending it to the text to speech plugin:
 
 .. code:: xml
 

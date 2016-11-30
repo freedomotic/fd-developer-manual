@@ -50,7 +50,9 @@ Add configuration blocks to your plugin
 
 If you have to configure multiple the same set of properties for different things (eg: URL and port of a set of hardware boards) you can use **tuples**.
 
-You can add as many <tuple></tuple> blocks as you need. The <tuples></tuples> block may be added after <properties></properties> on the same hierarchical level. Tuples are useful to have configuration data specific for you plugin to be loaded in Freedomotic at startup. Related configuration data can be stored in blocks called tuple.
+You can add as many ``<tuple></tuple>`` blocks as you need. The ``<tuples></tuples>`` block may be added after ``<properties></properties>`` on the same hierarchical level.
+
+Tuples are useful to have configuration data specific for you plugin to be loaded in Freedomotic at startup.
 
 .. code:: xml
   

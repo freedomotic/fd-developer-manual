@@ -7,13 +7,12 @@ considerations:
 
 1. **Always** develop on a feature branch.
 2. **Never** commit, rebase or merge changes into the master. Your
-   forked master should just be a mirror of the official one.
-3. The master must reflect the Freedomotic master, and must be pulled
+   forked **master** branch should just be a mirror of the official one and must be pulled
    frequently to be up to date with latest features and bugfixes.
 
-Failing to do the previous, will probably ends with a pull request
-rejected. As a recommendation, use meaningful branches names, they are
-going to be public.
+If you don't follow the previous suggestions your pull request probably will be rejected. 
+
+As a recommendation use meaningful branch names because they are going to be public.
 
 How to contribute
 #################
@@ -31,7 +30,7 @@ This process works as follows:
    *YOUR-GITHUB-USERNAME/freedomotic.git*
 2. Clone your fork locally by doing
 
-::
+.. code::
 
     git clone https://github.com/YOUR-GITHUB-USERNAME/freedomotic.git
 
@@ -47,18 +46,18 @@ This process works as follows:
    **freedomotic/master**. This can be done by publishing your new local
    branch online in your repository fork
 
-::
+.. code:: 
 
     git push origin BRANCHNAME
 
 To generate a pull-request just click the **Create pull request** button
 on GitHub 6. Your pull request will be reviewed by Freedomotic
 Development Team that will merge it into the main repository or ask for
-revisions.
+further revisions.
 
 More Info
 #########
 
-If you are clueless the procedure described abouve is covered in full
+If you are clueless the procedure described above is covered in full
 details with screenshots
 https://help.github.com/articles/using-pull-requests/#initiating-the-pull-request

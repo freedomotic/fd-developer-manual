@@ -121,7 +121,7 @@ definition. TODO: explain how to create an xobj object
    instance <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/tv/src/main/resources/data/templates/Tv.xobj>`__
 
 How to create the XML object
-============================
+############################
 
 TODO: add a general description ###Common properties section###
 
@@ -153,7 +153,7 @@ Boolean Behavior
 ----------------
 
 It is used to describe a property that can have only two values: true or
-false, for example the property **powered ** of an electric device such
+false, for example the property **powered** of an electric device such
 a Light.
 
 +---------------+---------------------------+-------------------------------------------------------------+------------+

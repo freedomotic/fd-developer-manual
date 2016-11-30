@@ -5,28 +5,33 @@ Commands
 When you create a new command you can choose two different ways, the
 first is the creation of an xml file deployed in the
 *FREEDOMOTIC\_ROOT/data/cmd* folder, the second option is to use the
-**EventEditor** plugin. The first choice is the better for developers
-because it guarantees full control of the values because the **EventEditor**
+**EventEditor** plugin. 
+
+The first choice is the best for developers because it guarantees full control of the values because the **EventEditor**
 is still under development.
 
 A Freedomotic command is a container of customizable parameters in the
-form of ``parameter = value``. Standard parameters are name, description
-and receiver to guarantee the correct routing of the message to the
+form of ``parameter = value``. 
+
+Standard parameters are **name**, **description**
+and **receiver** to guarantee the correct routing of the message to the
 actuator that can execute the task.
 
-The commands xml files are messages used to instruct the actuators on
-which action must be performed. Some commands are created at runtime,
-the same way the sensors creates events, however commands can be created
-at "design" time by the developer, to have this command embedded in the
-plugin (in *PLUGIN\_NAME/data/cmd* folder), or they can be created at
+Command xml files are messages used to instruct the actuators on
+which action must be performed.
+
+Some commands are created at runtime,
+the same way the sensors creates events however commands can be created
+at "design" time by the developer to have this command embedded in the
+plugin (in *PLUGIN\_NAME/data/cmd* folder) or they can be created at
 runtime by the user/configurator (and it will be saved in
 *FREEDOMOTIC\_ROOT/data/cmd* folder).
 
 Commands fields
 ---------------
 
-Properties received by a `driver plugin </wiki/communicate-hardware-devices-driver-plugin>`__
----------------------------------------------------------------------------------------------
+Properties received by a driver plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  @owner.\*: all thing properties and behaviors with the value they
    had before automation execution. If an automation rises the light
@@ -51,8 +56,8 @@ communicaton with X10 hardware.
 -  x10.gateway=PMIX35
 -  x10.function=ON
 
-Properties received by a `service plugin </wiki/communicate-web-services-service-plugins>`__
---------------------------------------------------------------------------------------------
+Properties received by a service plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  @event.\*: contains all events properties
 -  @current.\*: contains the properties of the event after the
@@ -67,8 +72,7 @@ An example (say ElectricDevice current state)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the command properties received by a text to speech plugin
-when the automation *IF [a light turns on] THEN [say ElectricDevice
-current state]* is performed
+when the automation ``IF a light turns on THEN say ElectricDevice current state`` is performed
 
 -  event.sender=Light
 -  event.date.day=4
@@ -97,7 +101,7 @@ current state]* is performed
 The structure of a command
 --------------------------
 
-Field| Description -------\|------------------- name \| A short string
+Field| Description -------|------------------- name \| A short string
 that identifies the effect of the command execution (eg: turn on light
 in the kitcken) description \| An extended description of the effect of
 the command execution. Write it in form "IF an event occurs THEN the
@@ -105,14 +109,17 @@ system ... yourDescription receiver \| The Channel on which the target
 plugin is listening to delay \| Not Yet Implemented, let this parameter
 to 0 timeout \| waiting time for the plugin reply, if 0 it's set to 10
 seconds by default properties \| A set of properties in form "key =
-value". Read the section below to know more about properties received by
-plugins ## Commands for the BehaviorManager ## These commands can be
-used to change objects state in "if this then that" automations, like
-"if it's dark then turn on garden lights". Here some example of commands
-sent to the Freedomotic internal BehaviorsManager. It accepts a
-predefined set of properties keys. Any plugin can have is own set of
-keys, what decides the keys a plugin respond to is just the code you
-write in the onCommand() method implementation.
+value". 
+
+Commands for the BehaviorManager
+--------------------------------
+
+These commands can be used to change objects state in ``IF this THEN that`` automations like
+``IF it's dark THEN turn on garden lights``. 
+
+Here some example of commands
+sent to the Freedomotic internal **BehaviorsManager**. It accepts a
+predefined set of properties keys but any plugin can have its own set.
 
 Command examples
 ----------------

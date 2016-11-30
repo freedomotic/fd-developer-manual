@@ -59,6 +59,7 @@ Contents:
    :maxdepth: 2
    
    Create new thing types <things/create-new-thing-types>
+   Add new thing templates <things/add-thing-template>
    
 .. toctree::
    :caption: Rules
