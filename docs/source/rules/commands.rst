@@ -252,14 +252,25 @@ Commands parameters can be scripted using javascript syntax like this:
 This command uses text to speech to say the current temperature in a
 zone and makes a on the fly conversion fron celsius to fahrenheit
 degrees. The property key is a variable in the scripting context that
-can be evaluated. To make a value scriptable it must start with an *"="*
-just like Excel. Values that not start with *"="* are the same as the
+can be evaluated. 
+
+To make a value scriptable it must start with an "**=**"
+just like Excel. Values that not start with "**=**" are the same as the
 previous Freedomotic versions.
 
 Here other example of scripting:
 
 .. code:: xml
 
-    <property name="myVar" value="= myVar=0; for (i=0; i<10; i++) myVar+=i;"/> //sums the first 10 integer and store the value in myVar property
-    <property name="myVar" value="= if (1==1)  myVar=1; else myVar="AREYOUJOKING?";"/> //if one is one myVar property is one
-    <property name="myVar" value="= myVar=!@event.object.powered;"/> //negate the powered value of on envobject; if is true becomes false, if is false become true
+   //sum the first 10 integer and store the value in myVar property
+   <property name="myVar" value="= myVar=0; for (i=0; i<10; i++) myVar+=i;"/>
+   
+.. code:: xml
+  
+   //if one is one myVar property is one
+   <property name="myVar" value="= if (1==1)  myVar=1; else myVar="AREYOUJOKING?";"/>
+ 
+.. code:: xml
+
+   negate the powered value of a thing if true becomes false, if false become true
+   <property name="myVar" value="= myVar=!@event.object.powered;"/>

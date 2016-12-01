@@ -33,6 +33,7 @@ Contents:
    
    Architecture components <architecture/architecture>
    Messaging system <architecture/messaging-system>
+   Channels <architecture/channels>
    Data structures <architecture/freedomotic-data-structures>
 
 .. toctree::
