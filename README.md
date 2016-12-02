@@ -1,5 +1,7 @@
 # Freedomotic Developer Manual
 
+[![Documentation Status](https://readthedocs.org/projects/freedomotic-developer-manual/badge/?version=latest)](http://freedomotic-developer-manual.readthedocs.io/en/latest/?badge=latest)
+
 Note: This repository contains _source files_ for the Freedomotic developer. It is intended for use by people that want to contribute to the manual.
 
 If you just want to read the guide, **[click here to read the published Freedomotic developer manual.](http://freedomotic-developer-manual.readthedocs.io/)**
