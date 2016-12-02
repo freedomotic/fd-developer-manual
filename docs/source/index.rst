@@ -26,6 +26,7 @@ Contents:
    :maxdepth: 2
    
    Contributors workflow <getting-started/contributors-workflow>
+   The 'Hello world' plugin <getting-started/hello-world>
 
 .. toctree::
    :caption: Architecture
