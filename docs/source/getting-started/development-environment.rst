@@ -70,6 +70,16 @@ To develop your own plugin you can start from the **hello-world** example projec
 
 Open it in your IDE, make some changes and compile. It will be automatically installed into the Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
 
+Javadoc
+--------
+Contains the Java code documentation. Here some useful section:
+
+* Package overview
+* Freedomotic Objects tree
+* Implemented behaviors for Objects
+* Freedomotic Events list
+* `freedomotic-core <http://www.emmecilab.net/freedomotic/core/site/apidocs/>`_
+* `freedomotic-model <http://www.emmecilab.net/freedomotic/model/site/apidocs/>`_
 
 Support
 -------
