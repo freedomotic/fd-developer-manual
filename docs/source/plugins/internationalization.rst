@@ -15,8 +15,7 @@ Freedomotic ships a mechanism for easily support localized strings and
 allows the developer to use a prebuild bag of general purpose strings.
 Moreover the developer could add custom messages on his/her own
 
-The static function to use, in place of your 'unlocalized' string is:
-``i18n.msg(_STRING_KEY_)``
+The static function to use in place of your 'unlocalized' string is ``i18n.msg(_STRING_KEY_)``.
 
 A quick example
 ---------------
@@ -32,20 +31,19 @@ Behind the scenes - what happens when calling i18n.msg()?
 ---------------------------------------------------------
 
 Freedomotic reads some system config to automatically guess user locale
-it searches proper localization string inside
-``/i18n/<Freedomotic locale>.properties``
+it searches proper localization string inside ``/i18n/<Freedomotic locale>.properties``.
 
-if the current locale is not defined (translation doesn't exist) en\_UK
-is used and Freedomotic.properties is loaded
+If the current locale is not defined (translation doesn't exist) **en\_UK**
+is used and *Freedomotic.properties* file is loaded.
 
 Making custom plugin translations
 ---------------------------------
 
-If global translation strings aren't enough, plugin developer could
-write custom strings and save them using the following path, starting
-from plugin base folder:
+If global translation strings aren't enough plugin developer could
+write custom strings and save them using the following path starting
+from plugin base folder
 
-//i18n/.properties\` for en\_UK
+``/i18n/<package-name>.properties\`` for **en\_UK**
 
 or
 
@@ -69,8 +67,8 @@ Just pass the current object as a parameter to ``i18n.msg()``
 Composing strings
 -----------------
 
-Consider the following example: we want to translate "save environment
-as", "**save object as**", "**save room as**" and so on. The translation file
+Consider the following example: we want to translate "**save environment
+as**", "**save object as**", "**save room as**" and so on. The translation file
 looks like this
 
 +---------------+-----------------------+-----------------------+
@@ -81,13 +79,9 @@ looks like this
 | environment   | Environment           | Ambiente              |
 +---------------+-----------------------+-----------------------+
 
-using a concatenation of strings doesn't work,
+using a concatenation of strings ``i18n.msg("save_as") + i18n.msg("environment");`` doesn't work and it'll result in "**save as environment**" ...
 
-``i18n.msg("save_as") + i18n.msg("environment";``
-
-it'll result in "**save as environment**" ...
-
-We can then use basic Java string format, like that
+We can then use basic Java string format like that
 
 +---------------+-----------------------+-----------------------+
 | Key string    | Default translation   | it\_IT localization   |

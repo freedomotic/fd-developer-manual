@@ -51,7 +51,6 @@ Contents:
    Handle plugin errors <plugins/handle-plugin-errors>
    Listen to events programmatically <plugins/listen-to-events-programmatically>
    Autodiscover and autoconfigure things <plugins/autodiscovering>
-   Plugin manifest and configuration <plugins/listen-to-events-programmatically>
    Security: authentication and authorization <plugins/security>
    Internationalization: translate your plugin <plugins/internationalization>
    

@@ -28,51 +28,13 @@ How to filter events using triggers
 
 Events can be intercepted using triggers. Every event has a default
 channel on which it is notified. To know which is the default channel of
-a particular event see listenable events page. To capture the event you
+a particular event see listenable events page (TODO ADD A LINK). To capture the event you
 just create a trigger that is listening to the same channel. For example
 the **PersonMoving** event is published on the channel ``app.event.sensor.person.movement.moving``.
 
 To intercept a person's movement you can define a trigger listening to
 channel ``app.event.sensor.person.movement.moving``.
 
-XML example
------------
-
-This trigger can filter **PersonExitZone** events. In that case the trigger
-fires only if the event is related to the kitchen zone and the person **ID**
-can be **ANY** (valid for **ANY** person). If the trigger is consistent with the
-event one or more commands will be executed. 
-
-.. code:: xml
-
-    <trigger>
-        <name>Someone Exits from Kitchen</name>
-        <description>When someone exits from kitchen area</description>
-        <channel>app.event.person.zone</channel>
-        <payload>
-            <payload>
-                <statement>
-                    <logical>AND</logical>
-                    <attribute>zone</attribute>
-                    <operand>EQUAL</operand>
-                    <value>Kitchen</value>
-                </statement>
-                <statement>
-                    <logical>AND</logical>
-                    <attribute>person</attribute>
-                    <operand>EQUAL</operand>
-                    <value>ANY</value>
-                </statement>
-                <statement>
-                    <logical>AND</logical>
-                    <attribute>action</attribute>
-                    <operand>EQUAL</operand>
-                    <value>exit</value>
-                </statement>
-            </payload>
-        </payload>
-        <delay>0</delay>
-    </trigger>
 
 How to filter received event parameters
 ---------------------------------------
@@ -100,60 +62,14 @@ custom string inside the ``<channel> </channel>`` tag.
 -  **value**: can be a string or an integer value. You can use the *ANY*
    key to match any value.
 
-Check if a thing name in the event is 'Kitchen Light'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: xml
-
-    <statement>
-      <logical>AND</logical>
-      <attribute>object.name</attribute>
-      <operand>EQUALS</operand>
-      <value>Kitchen Light</value>
-    </statement>
-
-Check if the thing type in the event is an electric device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: xml
-
-    <statement>
-      <logical>AND</logical>
-      <attribute>object.type</attribute>
-      <operand>REGEX</operand>
-      <value>^EnvObject.ElectricDevice\.(.*)</value>
-    </statement>
-
-Check if the temperture in the event is strictly greater than 20°C
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: xml
-
-    <statement>
-      <logical>AND</logical>
-      <attribute>@event.temperature</attribute>
-      <operand>GREATER_THAN</operand>
-      <value>20</value>
-    </statement>
-
-Check if the given time (format: HH:mm:ss) is between the specified time interval (format: HH:mm:ss-HH:mm:ss)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: xml
-
-    <statement>
-      <logical>AND</logical>
-      <attribute>time.current</attribute>
-      <operand>TIME_BETWEEN</operand>
-      <value>23:00:00-8:30:00</value>
-    </statement>
 
 Max execution limit and flood control
 -------------------------------------
 
 Every trigger has a **max-executions** parameter which defines how many
-times this trigger can fire. This counter is reset on Freedomotic start
-up. If the value is -1 this trigger has no max executions limit.
+times this trigger can fire. This counter is reset at Freedomotic startup. 
+If the value is **-1** this trigger has no max executions limit.
 
 Another property if **suspension-time** which defines for how many
 milliseconds this trigger is disabled after firing. The trigger cannot
@@ -198,6 +114,94 @@ In the console you can have a view of the loaded triggers and the channel on whi
 
 Examples
 --------
+
+Check if a thing name in the event is 'Kitchen Light'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+    <statement>
+      <logical>AND</logical>
+      <attribute>object.name</attribute>
+      <operand>EQUALS</operand>
+      <value>Kitchen Light</value>
+    </statement>
+
+Check if the thing type in the event is an electric device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+    <statement>
+      <logical>AND</logical>
+      <attribute>object.type</attribute>
+      <operand>REGEX</operand>
+      <value>^EnvObject.ElectricDevice\.(.*)</value>
+    </statement>
+
+Check if the temperature in the event is strictly greater than 20°C
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+    <statement>
+      <logical>AND</logical>
+      <attribute>@event.temperature</attribute>
+      <operand>GREATER_THAN</operand>
+      <value>20</value>
+    </statement>
+
+Check if the given time (format: HH:mm:ss) is between the specified time interval (format: HH:mm:ss-HH:mm:ss)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+    <statement>
+      <logical>AND</logical>
+      <attribute>time.current</attribute>
+      <operand>TIME_BETWEEN</operand>
+      <value>23:00:00-8:30:00</value>
+    </statement>
+
+
+Check is someone exits from kitchen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+    <trigger>
+        <name>Someone Exits from Kitchen</name>
+        <description>When someone exits from kitchen area</description>
+        <channel>app.event.person.zone</channel>
+        <payload>
+            <payload>
+                <statement>
+                    <logical>AND</logical>
+                    <attribute>zone</attribute>
+                    <operand>EQUAL</operand>
+                    <value>Kitchen</value>
+                </statement>
+                <statement>
+                    <logical>AND</logical>
+                    <attribute>person</attribute>
+                    <operand>EQUAL</operand>
+                    <value>ANY</value>
+                </statement>
+                <statement>
+                    <logical>AND</logical>
+                    <attribute>action</attribute>
+                    <operand>EQUAL</operand>
+                    <value>exit</value>
+                </statement>
+            </payload>
+        </payload>
+        <delay>0</delay>
+    </trigger>
+
+This trigger can filter **PersonExitZone** events. In that case the trigger
+fires only if the event is related to the kitchen zone and the person **ID**
+can be **ANY** (valid for **ANY** person). If the trigger is consistent with the
+event one or more commands will be executed. 
 
 A thing of type Electric Device is clicked
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
