@@ -51,7 +51,6 @@ Contents:
    Handle plugin errors <plugins/handle-plugin-errors>
    Listen to events programmatically <plugins/listen-to-events-programmatically>
    Autodiscover and autoconfigure things <plugins/autodiscovering>
-   Security: authentication and authorization <plugins/security>
    Internationalization: translate your plugin <plugins/internationalization>
    
    
@@ -80,4 +79,10 @@ Contents:
    Udp helper <services/udp-helper>
    Natural language processing <services/natural-language-processing>
    P2P <services/p2p>
+   
+.. toctree::
+   :caption: Security
+   :maxdepth: 2   
+   
+   Security: authentication and authorization <plugins/security>
    
