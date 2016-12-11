@@ -4,11 +4,16 @@ Security: authentication and authorization
 
 Freedomotic uses `Apache Shiro <https://shiro.apache.org/>`_, a Java security framework, to manage authentication and authorization.
 
-This tool is very flexible and offers many other features as cryptography and session management.
+This tool is very flexible and offers many other features as cryptography and session management. Also it's very easy to configure and use.
+
+All the classes are accessible from `this folder <https://github.com/freedomotic/freedomotic/tree/master/framework/freedomotic-core/src/main/java/com/freedomotic/security>`_.
+
+Currently we adopt Apache Shiro v1.3.2
 
 Authentication
 --------------
 
+The class `UserRealm <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/main/java/com/freedomotic/security/UserRealm.java>`_ makes the work.
 All users' data are stored in *users.xml* file located into *config* folder.  
 
 .. code:: xml
@@ -57,7 +62,8 @@ All users' data are stored in *users.xml* file located into *config* folder.
   </users>
   
   
-Credentials are saved in hash format.
+Credentials are saved in hash format (SHA-256).
+
 Every user has a specific **role** as reported in *roles.xml* file.
 
 .. code:: xml
@@ -88,9 +94,60 @@ Every user has a specific **role** as reported in *roles.xml* file.
  
 
 A **role** defines a system profile and gives some permissions to interact with the system.
+
+We have four different roles: **administrators**, **system**, **guests** and **managers**. The first two have unlimited privileges.
  
 Authorization
 -------------
- 
+
+Privileges are managed via *privileges.list* file. Each section reports a list of allowed actions. 
+
+.. code:: xml
+
+ #Currently supported and used privileges
+  
+ [environments]
+ environments:create
+ environments:read
+ environments:update
+ environments:delete
+ environments:load #from file
+ environments:save #to file
+
+ [zones]
+ zones:create
+ zones:read
+ zones:update
+ zones:delete
+
+ [objects]
+ objects:create
+ objects:read
+ objects:update
+ objects:delete
+ objects:load #from file
+ objects:save #to file
+
+ [system]
+ sys:config:load
+ sys:plugins:load 
+ sys:plugins:read
+ sys:plugins:start
+ sys:plugins:stop
+ sys:plugins:update
+ sys:shutdown
+
+ [auth]
+ auth:privileges:update
+ auth:privileges:read
+ auth:realms:create
+ auth:realms:delete
+
+ #Privileges to be added soon
+
+ [triggers]
+ [reactions]
+ [commands]
+
  
 
