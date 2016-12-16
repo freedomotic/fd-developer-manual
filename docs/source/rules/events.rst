@@ -7,8 +7,9 @@ Freedomotic and its plugins send events when anything relevant happens.
 Any event is sent on a **messaging channel**. A channel address is a simple
 string with a hierarchical structure like ``app.sensors.event.object.behavior.changed``. 
 
-You can subscribe an event channel from a trigger which is a filter of events. For example if your
-event is "**an object changed state**" you can filter it using a trigger ``if
+You can subscribe an event channel from a trigger which is a filter of events. 
+
+For example if your event is ``an object changed state`` you can filter it using a trigger ``if
 a light in the kitchen changed its powered state``. 
 
 Freedomotic events have a set of standard properties plus a list of properties related to
@@ -25,11 +26,11 @@ and filtered by any trigger:
 +================+===================+==================================================================+
 | date.dayname   | eg: Sunday        | English name of the day in which the event is throwed            |
 +----------------+-------------------+------------------------------------------------------------------+
-| date.day       |                   | The day number in which the event is throwed                     |
+| date.day       | eg: 4 for Thursday| The day number in which the event is throwed                     |
 +----------------+-------------------+------------------------------------------------------------------+
-| date.month     |                   | The month name in which the event is throwed                     |
+| date.month     | eg: October       | The month name in which the event is throwed                     |
 +----------------+-------------------+------------------------------------------------------------------+
-| date.year      |                   | The year number in which the event is throwed                    |
+| date.year      | eg: 2016          | The year number in which the event is throwed                    |
 +----------------+-------------------+------------------------------------------------------------------+
 | time.hour      |                   | The hour number in 24h format in which the event is throwed      |
 +----------------+-------------------+------------------------------------------------------------------+
@@ -44,13 +45,13 @@ More info in Javadoc
 --------------------
 
 For event specific data please refer to the Javadocs of the event
-classes
-http://freedomotic.com/javadoc/it/freedomotic/events/package-summary.html
+classes http://www.emmecilab.net/freedomotic/core/site/apidocs/com/freedomotic/events/package-summary.html
+
 Otherwise you can take a look at the Freedomotic log (LogViewer plugin)
 to see the paramentes embedded into a received event.
 
 For example this is the list of properties available to a trigger that
-listen to ObjectReceiveClick events
+listen to **ObjectReceiveClick** events
 
 -  date.day.name EQUALS Thursday
 -  date.day EQUALS 4
