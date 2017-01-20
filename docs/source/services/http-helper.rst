@@ -16,10 +16,10 @@ from an online service. First of all create a new helper
 Remember that is a best practice to reuse this object if you have to do
 multiple requests
 
-Retrieve text content
----------------------
+Retrieve text content (no authentication)
+-----------------------------------------
 
-Using ``retrieveContent(String url)`` specify the online service url to
+Using ``retrieveContent(String url)`` you can specify the online service url to
 retrieve data from and print the string on the console
 
 .. code:: java
@@ -38,6 +38,12 @@ IO exceptions
     } catch (IOException ex) {
       //handle exception here
     }
+
+
+Retrieve text content (with authentication)
+-------------------------------------------
+
+If the service requires authentication you can use ``retrieveContent(String url, String username, String password)``. 
 
 Perform XPath queries on an URL content
 ---------------------------------------

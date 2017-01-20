@@ -15,7 +15,7 @@ a light in the kitchen changed its powered state``.
 Freedomotic events have a set of standard properties plus a list of properties related to
 the specific event.
 
-Generic Event Parameters
+Generic event parameters
 ------------------------
 
 The following parameters are common to all events and can be intercepted
@@ -32,14 +32,51 @@ and filtered by any trigger:
 +----------------+-------------------+------------------------------------------------------------------+
 | date.year      | eg: 2016          | The year number in which the event is throwed                    |
 +----------------+-------------------+------------------------------------------------------------------+
-| time.hour      |                   | The hour number in 24h format in which the event is throwed      |
+| time.hour      | eg: 0-23          | The hour number in 24h format in which the event is throwed      |
 +----------------+-------------------+------------------------------------------------------------------+
-| time.minute    |                   | The minute of the current hour in which the event is throwed     |
+| time.minute    | eg: 0-59          | The minute of the current hour in which the event is throwed     |
 +----------------+-------------------+------------------------------------------------------------------+
-| time.second    |                   | The second of the current minute in which the event is throwed   |
+| time.second    | eg: 0-59          | The second of the current minute in which the event is throwed   |
 +----------------+-------------------+------------------------------------------------------------------+
 | sender         |                   | The name of the module that have generated the event             |
 +----------------+-------------------+------------------------------------------------------------------+
+
+Predefined events
+-----------------
+
+Here a list of predefined events:
+
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| EVENT                    | CHANNEL                                       | DESCRIPTION                                              |
++==========================+===============================================+==========================================================+
+| AccountEvent             | app.event.sensor.account.change               | Account status changed                                   |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| GenericEvent             | app.event.sensor                              | Generic event. Use ONLY if there is not a specific event |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| LocationEvent            | app.event.sensor.person.movement.detected     | Person position detected                                 |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| LuminosityEvent          | app.event.sensor.luminosity                   | Luminosity changed                                       |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| MessageEvent             | app.event.sensor.messages.MESSAGE_TYPE        | Message notified                                         |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| ObjectHasChangedBehavior | app.event.sensor.object.behavior.change       | Object behavior changed                                  |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| ObjectReceiveClick       | app.event.sensor.object.behavior.clicked      | Object clicked                                           |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| PersonEntersZone         | app.event.sensor.person.zone.enter            |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| PersonExitsZone          | app.event.sensor.person.zone.exit             |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| PluginHasChanged         | app.event.sensor.plugin.change                |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| ProtocolRead             | app.event.sensor.protocol.read.PROTOCOL_NAME  |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| ScheduledEvent           | app.event.sensor.calendar.event.schedule      |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| TemperatureEvent         | app.event.sensor.temperature                  |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
+| ZoneHasChanged           | app.event.sensor.environment.zone.change      |                                                          |
++--------------------------+-----------------------------------------------+----------------------------------------------------------+
 
 More info in Javadoc
 --------------------
