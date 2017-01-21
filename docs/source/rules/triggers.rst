@@ -2,14 +2,14 @@
 Triggers
 ========
 
-A trigger is a filter that permits to intercept an **Event** on a **Channel**.
+A trigger is a filter that permits to intercept an **event** on a **channel**.
 
 It performs check on the event carried values and tags assigning a meaningful and reusable name to this restriction.
 
 For example an event can be the notification that are the 10 o'Clock; a
 trigger can listen to time events and if the hour is between 7 and 13 o'Clock you can name this trigger
-**"it's morning"** and reuse it to perform **Reactions** like "**IF it's morning THEN turn off outdoor
-lights**".
+``it's morning`` and reuse it to perform **reactions** like ``IF it's morning THEN turn off outdoor
+lights``.
 
 Therefore a trigger can be used to decide whether a notified event has
 to be processed or not. Whenever an event is processed by a trigger, if
@@ -26,9 +26,11 @@ graphical editor, so there is no need to edit the XML manually.
 How to filter events using triggers
 -----------------------------------
 
-Events can be intercepted using triggers. Every event has a default
-channel on which it is notified. To know which is the default channel of
-a particular event see listenable events page (TODO ADD A LINK). To capture the event you
+Events can be intercepted using triggers. each event has a default
+channel on which it is notified. 
+
+To know which is the default channel of a particular event see listenable events page (TODO ADD A LINK).
+To capture the event you
 just create a trigger that is listening to the same channel. For example
 the **PersonMoving** event is published on the channel ``app.event.sensor.person.movement.moving``.
 
@@ -57,7 +59,7 @@ custom string inside the ``<channel> </channel>`` tag.
    which properties are carried by an event you have to refer to the
    event page.
 -  **operand**: can be *EQUALS*, *REGEX*, *GREATER\_THAN*, *LESS\_THAN*,
-   *GREATER\_EQUAL\_THAN*, *LESS\_EQUAL\_THAN*, BETWEEN\_TIME. It's used
+   *GREATER\_EQUAL\_THAN*, *LESS\_EQUAL\_THAN*, *BETWEEN\_TIME*. It's used
    to relate the attribute with the value.
 -  **value**: can be a string or an integer value. You can use the *ANY*
    key to match any value.

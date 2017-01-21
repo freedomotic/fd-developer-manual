@@ -32,10 +32,8 @@ This is an example of the most simple manifest file you can have:
       </properties>
    </config>
 
-Every plugin has an unique input **Messaging Channel** used for message exchange; it is addressed using the info you put in the manifest file.
-For plugins the Channel name is: ``app.actuators.CATEGORY.SHORT-NAME.in``.
 
-The manifest file is the **ONLY** place where you should add configuration parameters for your plugin. You should not use external files.
+.. note:: The manifest file is the **ONLY** place where you should add configuration parameters for your plugin. You should not use external files if not strictly needed (e.g. by third party libraries).
 
 You can add custom properties to this list. The properties can be retrieved programmatically this way:
 
@@ -84,4 +82,10 @@ Tuples are useful to have configuration data specific for you plugin to be loade
 
 You can use free custom strings for the attribute name and the value. 
 
+Messaging channel
+-----------------
+
+Every plugin has an unique input **messaging channel** used for message exchange. It is addressed using the info you put in the manifest file.
+
+For plugins the channel name has the following format ``app.actuators.CATEGORY.SHORT-NAME.in``.
 

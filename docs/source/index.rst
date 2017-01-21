@@ -44,7 +44,6 @@ Contents:
    What is a plugin? <plugins/what-is-a-plugin>
    Plugins manifest and configuration <plugins/plugin-manifest-configuration>
    Create a new plugin <plugins/create-a-new-plugin>
-   Publish your plugin <plugins/publish-your-plugin>
    Freedomotic APIs <plugins/api>
    Bind things state to hardware data <plugins/bind-things-state-to-hardware-data>
    Bind things state to web services data <plugins/bind-things-state-to-web-services-data>
@@ -52,7 +51,9 @@ Contents:
    Listen to events programmatically <plugins/listen-to-events-programmatically>
    Autodiscover and autoconfigure things <plugins/autodiscovering>
    Internationalization: translate your plugin <plugins/internationalization>
-   
+   Publish your plugin <plugins/publish-your-plugin>
+   Plugin samples <plugins/plugin-samples>
+
    
 .. toctree::
    :caption: Things development
