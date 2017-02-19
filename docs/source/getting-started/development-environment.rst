@@ -78,8 +78,8 @@ Contains the Java code documentation. Here some useful section:
 * Freedomotic Objects tree
 * Implemented behaviors for Objects
 * Freedomotic Events list
-* `freedomotic-core <http://www.emmecilab.net/freedomotic/core/site/apidocs/>`_
-* `freedomotic-model <http://www.emmecilab.net/freedomotic/model/site/apidocs/>`_
+* `freedomotic-core <https://freedomotic.github.io/javadoc/freedomotic-core/>`_
+* `freedomotic-model <https://freedomotic.github.io/javadoc/freedomotic-model/>`_
 
 Support
 -------
