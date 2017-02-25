@@ -8,17 +8,26 @@ understendable. If you're a developer and want to add your plugin the
 capability to 'speak' different languages, just follow this simple guide
 to adapt your code.
 
-Adding localization support
----------------------------
+Adding internationalization support
+-----------------------------------
 
 Freedomotic ships a mechanism for easily support localized strings and
 allows the developer to use a prebuild bag of general purpose strings.
-Moreover the developer could add custom messages on his/her own
+Moreover the developer could add custom messages on his/her own.
 
+First of all we need to access to API so let's add the following code
+
+.. code:: 
+
+    private API api;
+    private I18n i18n;
+    
+    api = getApi();
+    i18n = api.getI18n();
+    
 The static function to use in place of your 'unlocalized' string is ``i18n.msg(_STRING_KEY_)``.
 
-A quick example
----------------
+Here a quick example
 
 ::
 
@@ -26,6 +35,9 @@ A quick example
      LOG.info("Hello");
      // new code (localized)
      LOG.info(i18n.msg("greeting"));
+
+In the plugin manifest file you have to add the property ``<property name="enable-i18n" value="true"/>``.
+
 
 Behind the scenes - what happens when calling i18n.msg()?
 ---------------------------------------------------------
@@ -95,5 +107,7 @@ We can then use basic Java string format like that
 
    i18n.msg("save_as",new Object[]{i18n.msg(environment)});
 
-So the second variable is given as replacement for placeholder **{0}**. This
-applies to many placeholders, not only one.
+So the second variable is given as replacement for placeholder **{0}**.
+
+This applies to many placeholders, not only one.
+

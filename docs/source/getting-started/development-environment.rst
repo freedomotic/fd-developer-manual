@@ -10,8 +10,9 @@ Requirements check
 - **Maven:** version 2 or 3 (to install on Ubuntu: *sudo apt-get install maven*)
 - **Any OS** with java support (Linux, Windows, Mac, Solaris ...)
 
-Development status:
-- **Current released version**:
+**Development status**: beta testing
+
+**Current released version**:
 `Freedomotic Commander 5.6 RC3 <https://sourceforge.net/projects/freedomotic/files/freedomotic-commander-5.6.0-rc3.zip/download>`_
 (released on 1 Jul 2016)
 
@@ -57,10 +58,6 @@ If you miss this step Freedomotic won't start
     java -jar framework/freedomotic-core/target/freedomotic-core/freedomotic.jar
 
     
-If you experience compile or startup errors please refer to [Faq & Troubleshooting](https://github.com/freedomotic/freedomotic/wiki/Faq-&-Troubleshooting)
-
-If you want to know more about plugins development, please take a look at this [Hello Word Examples](https://github.com/freedomotic/freedomotic/wiki/Freedomotic-%22Hello-World!%22)
-
 Git repository is an SDK
 ------------------------
 
@@ -68,20 +65,16 @@ The GIT repository is a complete SDK with all you need to code and test your Fre
 
 To develop your own plugin you can start from the **hello-world** example project included in *GIT_ROOT/plugins/devices/hello-world*. 
 
-Open it in your IDE, make some changes and compile. It will be automatically installed into the Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
+Open it in your IDE, make some changes and compile. It will be automatically installed into Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
 
 Javadoc
 --------
-Contains the Java code documentation. Here some useful section:
+Please refer to
 
-* Package overview
-* Freedomotic Objects tree
-* Implemented behaviors for Objects
-* Freedomotic Events list
 * `freedomotic-core <https://freedomotic.github.io/javadoc/freedomotic-core/>`_
 * `freedomotic-model <https://freedomotic.github.io/javadoc/freedomotic-model/>`_
 
 Support
 -------
 
-Please join our `mailing list <https://groups.google.com/forum/#!forum/freedom-domotics>`_ and `share your experience <https://goo.gl/Iq8C6e>`_
+Please join our `mailing list <https://groups.google.com/forum/#!forum/freedom-domotics>`_ and `share your experience <https://goo.gl/Iq8C6e>`_.
