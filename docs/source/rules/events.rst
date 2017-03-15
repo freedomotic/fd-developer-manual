@@ -15,14 +15,14 @@ a light in the kitchen changed its powered state``.
 Freedomotic events have a set of standard properties plus a list of properties related to
 the specific event.
 
-Generic event parameters
+Generic event properties
 ------------------------
 
-The following parameters are common to all events and can be intercepted
+The following properties are common to all events and can be intercepted
 and filtered by any trigger:
 
 +----------------+-------------------+------------------------------------------------------------------+
-| PARAMETER      | POSSIBLE VALUES   | DESCRIPTION                                                      |
+| PROPERTY       | POSSIBLE VALUES   | DESCRIPTION                                                      |
 +================+===================+==================================================================+
 | date.dayname   | eg: Sunday        | English name of the day in which the event is throwed            |
 +----------------+-------------------+------------------------------------------------------------------+
@@ -63,29 +63,26 @@ Here a list of predefined events:
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
 | ObjectReceiveClick       | app.event.sensor.object.behavior.clicked      | Object clicked                                           |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| PersonEntersZone         | app.event.sensor.person.zone.enter            |                                                          |
+| PersonEntersZone         | app.event.sensor.person.zone.enter            | Person enters a zone                                     |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| PersonExitsZone          | app.event.sensor.person.zone.exit             |                                                          |
+| PersonExitsZone          | app.event.sensor.person.zone.exit             | Person exits a zone                                      |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| PluginHasChanged         | app.event.sensor.plugin.change                |                                                          |
+| PluginHasChanged         | app.event.sensor.plugin.change                | Plugin status changed                                    |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| ProtocolRead             | app.event.sensor.protocol.read.PROTOCOL_NAME  |                                                          |
+| ProtocolRead             | app.event.sensor.protocol.read.PROTOCOL_NAME  | Protocol read                                            |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| ScheduledEvent           | app.event.sensor.calendar.event.schedule      |                                                          |
+| ScheduledEvent           | app.event.sensor.calendar.event.schedule      | Time related event                                       |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| TemperatureEvent         | app.event.sensor.temperature                  |                                                          |
+| TemperatureEvent         | app.event.sensor.temperature                  | Temperature changed                                      |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
-| ZoneHasChanged           | app.event.sensor.environment.zone.change      |                                                          |
+| ZoneHasChanged           | app.event.sensor.environment.zone.change      | Zone changed                                             |
 +--------------------------+-----------------------------------------------+----------------------------------------------------------+
 
 More info in Javadoc
 --------------------
 
 For event specific data please refer to the Javadocs of the event
-classes http://www.emmecilab.net/freedomotic/core/site/apidocs/com/freedomotic/events/package-summary.html
-
-Otherwise you can take a look at the Freedomotic log (LogViewer plugin)
-to see the paramentes embedded into a received event.
+classes https://freedomotic.github.io/javadoc/freedomotic-core/com/freedomotic/events/package-summary.html
 
 For example this is the list of properties available to a trigger that
 listen to **ObjectReceiveClick** events
