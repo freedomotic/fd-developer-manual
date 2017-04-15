@@ -44,6 +44,7 @@ Contents:
    What is a plugin? <plugins/what-is-a-plugin>
    Plugins manifest and configuration <plugins/plugin-manifest-configuration>
    Create a new plugin <plugins/create-a-new-plugin>
+   Plugin lifecycle <plugins/plugin-lifecycle>
    Freedomotic APIs <plugins/api>
    Bind things state to hardware data <plugins/bind-things-state-to-hardware-data>
    Bind things state to web services data <plugins/bind-things-state-to-web-services-data>
