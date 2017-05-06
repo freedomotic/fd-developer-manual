@@ -60,6 +60,7 @@ Contents:
    :caption: Things development
    :maxdepth: 2
    
+   What is a thing? <things/what-is-a-thing>
    Create new thing types <things/create-new-thing-types>
    Add new thing templates <things/add-thing-template>
    

@@ -1,21 +1,21 @@
 
-Create new things types
-=======================
+Create new thing types
+======================
 
 To develop a new object type you have to create a Java extension which
 describes to the system the actions the new type of object is capable.
 
-After that your object can be instantiated writing XML files that
+After that your object can be instantiated by writing a XML file that
 describes the value of an instance of the object model you have
 implemented in Java.
 
-To create the Java Object Model you have to enlist the object properties
-and the values it can take on particular situations. This is done adding
-predefined listeners to your object model called **behaviors**.
+To create the **Java object model** you have to enlist the object properties
+and the values it can take. This is done adding
+predefined listeners (called **behaviors**) to your object.
 
 For example a light can be turned on, turned off and dimmed. So it has a
-behavior called powered that can be true or false and a behavior called
-brightness that can assume integer values from 0 to 100.
+behavior called **powered** that can be **true** or **false** and a behavior called
+**brightness** that can assume integer values from 0 to 100.
 
 A behavior is an instance of predefined classes. For example the
 behavior **powered** is an instance of
@@ -24,9 +24,10 @@ while **brightness** instantiate
 `RangedIntBehavior.java <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-model/src/main/java/com/freedomotic/model/object/RangedIntBehavior.java>`__.
 
 A behavior listens to change requests of its values, parses the request
-(for example a sensor notifies that a light brightness is changed) and
-performs the defined operation for this situation. The design pattern
-underneat is the same as a Java listener used for a Swing button. An
+(for example a sensor notifies that a light brightness has changed) and
+performs the defined operation for this situation. 
+
+The design pattern underneat is the same as a Java listener used for a Swing button. An
 example can be more clear. This is the definition of the brightness
 property of a light object
 
@@ -59,7 +60,7 @@ property of a light object
                 }
          });
 
-the setBrightness method will look like this
+the setBrightness() method will look like this
 
 .. code:: java
 
@@ -77,7 +78,7 @@ the setBrightness method will look like this
                 }
             }
 
-Predefined Behaviors
+Predefined behaviors
 --------------------
 
 Here is a list of ready to use behaviors to instantiate as object
@@ -95,19 +96,19 @@ Load the object as a plugin
 ---------------------------
 
 As for any plugin the code must be compiled and it's jar file must be
-deployed in the FREEDOMOTIC\_ROOT/plugins/objects/OBJECT\_NAME\_FOLDER.
-At Freedomotic startup it loads all the objects in
-FREEDOMOTIC\_ROOT/plugins/objects/ subfolders regardless their names.
-Object doesn't require an XML configuration files.
+deployed in the *FREEDOMOTIC\_ROOT/plugins/objects/OBJECT\_NAME\_FOLDER*.
+At Freedomotic startup it loads all the objects inside
+*FREEDOMOTIC\_ROOT/plugins/objects/* subfolders regardless their names.
+Objects don't require a XML configuration file.
 
 Create instances of your new object type
 ----------------------------------------
 
-Now Freedomotic knows how this type of object behaviors on particular
-inputs. Then you have to provide xobj files that describe the instances
-of your object type. For example you have the lights definitions now you
+Now Freedomotic knows how this type of object can act when it receives a specific input.
+Then you have to provide one or more *.xobj* files that describe the instances
+of your object type. For example you have the light definitions but you
 need to add to the environment a light called 'kitchen light' and
-another one called 'livingroom light'. This is done through xobj
+another one called 'livingroom light'. This is done through .xobj
 definition. TODO: explain how to create an xobj object
 
 -  `Here <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/java/com/freedomotic/things/impl/Light.java>`__
@@ -123,7 +124,10 @@ definition. TODO: explain how to create an xobj object
 How to create the XML object
 ############################
 
-TODO: add a general description ###Common properties section###
+TODO: add a general description 
+
+Common properties section
+#########################
 
 +-------------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------+
 | Field             | Values                           | Description                                                                                                                          | Required   |
@@ -149,7 +153,7 @@ name must match the same name that is used inside the object code. To
 facilitate the objects configuration, an object developer should expose
 all names that is using inside the code. The names are case sensitive.
 
-Boolean Behavior
+Boolean behavior
 ----------------
 
 It is used to describe a property that can have only two values: true or
@@ -170,11 +174,11 @@ a Light.
 | priority      |                           | NOT YET IMPLEMENTED                                         | NO         |
 +---------------+---------------------------+-------------------------------------------------------------+------------+
 
-Ranged Int Behavior
+Ranged int behavior
 -------------------
 
 A behavior used to model a property that can assume a ranged set of
-integer values for example from zero to hundred. Is the case of the
+integer values for example from zero to hundred. For example the
 volume property of a TV object.
 
 +---------------+---------------------------+---------------------------------------------------------------------------+------------+
@@ -197,11 +201,11 @@ volume property of a TV object.
 | priority      |                           | NOT YET IMPLEMENTED                                                       | NO         |
 +---------------+---------------------------+---------------------------------------------------------------------------+------------+
 
-Exclusive Multivalue Behavior
+Exclusive multivalue behavior
 -----------------------------
 
 This behavior represents an object feature that only takes values from a
-predefined list. For example, the input property of a TV object could
+predefined list. For example the input property of a TV object could
 only take values like INPUT1, INPUT2, SATELLITE, etc...
 
 +---------------+---------------------------+--------------------------------------------------------------+------------+
@@ -223,7 +227,7 @@ only take values like INPUT1, INPUT2, SATELLITE, etc...
 Views section
 -------------
 
-Each view correspond to a visual representation of the object that could
+Each view corresponds to a visual representation of the object that could
 be shown using the object code. The position of the view on the list
 correspond to the same number that is used in the code.
 
@@ -280,10 +284,9 @@ correspond to the same number that is used in the code.
 Actions section
 ---------------
 
-Although the objects have behaviors that normally represents it current
-status, the action represent the actions that could be performed in the
-object. This actions must be associated with the hardware command that
-have to be executed when the action is launched. As with the Behavior,
+The actions represent the tasks that could be performed by an object.
+These actions must be associated with the hardware command that
+have to be executed when the action is launched. As with the behavior,
 the name of each action must match the ones used in the object code.
 Also the command value should match the name of a existing command
 (normally a hardware command created by the hardware plugin developer).
