@@ -89,3 +89,9 @@ Contents:
    
    Security: authentication and authorization <plugins/security>
    
+   .. toctree::
+   :caption: Freedomotic API
+   :maxdepth: 2   
+   
+   How to interact with Freedomotic (third parties) <api/api>
+   
