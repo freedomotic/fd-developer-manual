@@ -3,7 +3,7 @@ dependencies:
 - python==3.5
 - sphinx_rtd_theme
 - pip:
-    - sphinx
+    - sphinx==1.5.6
     - recommonmark
     - nbsphinx
     - jupyter_sphinx_theme==0.0.6
