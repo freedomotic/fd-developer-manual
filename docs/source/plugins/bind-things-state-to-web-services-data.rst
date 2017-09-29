@@ -38,7 +38,7 @@ configured with protocol "**weather-underground**" and address
 "**london**". The temperature value is stored into a java variable
 "**londonTemperature**".
 
-1. Specify the target thing new state in the notified event
+1. Specify the new state of the targeted thing in the notified event
 -----------------------------------------------------------
 
 .. code:: java
@@ -60,16 +60,16 @@ configured with protocol "**weather-underground**" and address
 2. Create an event to be listened by triggers
 ---------------------------------------------
 
-Instead if you want just to notify an event which is not directly
-related to object states you can do this way: Events are published by
+Instead if you just want to notify an event which is not directly
+related to the object's states, it can be done in the following way: Events are published by
 plugins on messaging channels. A series of useful events is predefined
 in Freedomotic but you can create your own or simply use the
 **GenericEvent** class.
 
 Every action in the real environment and every interaction with
 Freedomotic (eg: a click on the GUI) is mapped to an event. Events can
-be intercepted by triggers, and to a trigger you can assign one or more
-commands, changing at runtime the behavior of the system.
+be intercepted by triggers, and you can assign one or more
+commands to a trigger, changing the behavior of the system at runtime.
 
 How to notify a generic event
 ------------------------------
@@ -106,17 +106,17 @@ Now a trigger can listen to ``app.event.sensor.deepthought`` this way
 
 and then you can create automations like ``WHEN [You know the right answer to Life] THEN [send me an email]``
 
-Beside the all purpose **GenericEvent**, some useful events are predefined
-in freedomotic. Take a look at this list
+Besides the all purpose **GenericEvent**, some useful events are predefined
+in freedomotic. Look at this list
 http://freedomotic.com/javadoc/it/freedomotic/events/package-frame.html
 
-.. note::  If you plugin main purpose is to change the state of objects on the map (eg: set thermometer object value to the value readed from Google Weather) then you should follow the option 1.
+.. note::  If your plugin's main purpose is to change the state of an object on the map (eg: set thermometer object value to the value read from Google Weather) then you should follow option 1.
 
-More info about triggers
+More information about triggers
 ------------------------
 
 A trigger can listen on an events channel and filter the event content.
-If your event notifies the outdoor temperature you can have a trigger
+If your event notifies about the outdoor temperature, then you can have a trigger
 called ``Outside is cold`` which fires if ``temperature is less than 10°C``.
 You should provide this trigger along with your plugin in its *data/trg*
 folder. To know more about triggers definition take a look at this page

@@ -5,14 +5,14 @@ To integrate new building automation protocols (eg: zwave, zigbee,
 ...) you can create a dedicated plugin. 
 
 This plugin acts as a "translator" from Freedomotic generic commands to protocol specific
-commands and viceversa.
+commands and vice versa.
 
 Read data from hardware
 -----------------------
 
-Your plugin will read data from the protocol and translate them into
+Your plugin will read data from the protocol and translate it into
 Freedomotic events to be notified to the framework. The event you want
-to notify usually is a
+to notify is usually a
 `ProtocolRead </javadoc/it/freedomotic/events/ProtocolRead.html>`__
 event; take a look at `how to listen and notify
 events </content/make-your-plugin-send-and-listen-events>`__ tutorial.
@@ -23,7 +23,7 @@ Freedomotic environment map you have two ALTERNATIVE choices:
 Specify the new object state in the notified event
 --------------------------------------------------
 
-High level communication protocols usually know if the readed value is a
+High level communication protocols usually know if the read value is a
 temperature, a binary state (true/false) or another kind of value.
 
 In this case you can specify the object state directly in the notified
@@ -42,36 +42,36 @@ event as following:
     //send the event to Freedomotic
     notifyEvent(event);
 
-The drawback is that you plugin is now bound to this specific object
+The drawback is that your plugin is now bound to this specific object
 implementation, so it will work only with objects that have a behavior
-called "powered" which accepts true/false values (BooleanBehavior).
+called "powered" which accepts true/false values (boolean behaviour).
 
-To avoid bounding your plugin to a specific object implementation you can
+To avoid binding your plugin to a specific object implementation you can
 just notify the raw read hardware value and convert it into a valid
 behavior value using a hardware trigger (data source).
 
 Create a hardware trigger to be configured as "Data source"
 -----------------------------------------------------------
 
-You'd choose this option if your communication protocol doesn't know
+You would choose this option if your communication protocol doesn't know
 the object type.
-For example a relay board just knows if a relay is **on** or **off** but not if the wired object is a **lamp** or a
-**coffee machine**. It simply notifies an hardware read value.
+For example, a relay board just knows if a relay is **on** or **off** but not if the wired object is a **lamp** or a
+**coffee machine**. It simply notifies a hardware read value.
 
 The interpretation of the raw read value is done at configuration time,
 because only the configurator knows what is really connected to the relay
-board. This simply means to bound an object state (eg: ``powered=true``)
-to a specific trigger that you (as developer) have to provide along
+board. This simply means that to bind an object state (eg: ``powered=true``)
+to a specific trigger, then you (as developer) must provide one along
 with your plugin.
 
 For example if you are developing an Arduino based plugin you can define
-a data source trigger called ``Arduino Relay Board: readed value 1 in
+a data source trigger called ``Arduino Relay Board: read value 1 in
 first relay line``. The mapping between the object state and your plugin
-trigger, will make the object to become "powered" when the first relay
-of the Arduino board is on.
+trigger will make the object to become "powered" when the first relay
+of the Arduino board is switched on.
 
-As a note the object settings can be changed from jfrontend with a right
-click on an object on the map (**Data source** tab), like in the image
+As a note, the object settings can be changed from jfrontend by right clicking
+ on an object on the map (**Data source** tab), like in the image
 below:
 
 .. figure:: http://freedomotic.com/sites/default/files/wilsonkong888/lt111%20screen2.jpg?1406998130
@@ -89,7 +89,7 @@ Assuming the board communication protocol is HTTP based, the plugin should trans
 HTTP request to the IP the hardware board is listening.
 
 Your plugin will receive this generic command in the ``onCommand()``
-method of your plugin and here you'd parse the command parameters with
+method of your plugin and here you would parse the command parameters with
 
 .. code:: java
 
@@ -97,7 +97,7 @@ method of your plugin and here you'd parse the command parameters with
 
 and create the corresponding protocol specific request.
 
-To know which variables are available to you plugin to perform its
+To know which variables are available to your plugin to perform its
 tasks take a look at the section `Properties received by a driver
 plugin <../rules/commands>`__
 
