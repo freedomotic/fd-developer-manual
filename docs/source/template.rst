@@ -15,3 +15,5 @@ Template
 +------------+------------+-----------+
 
 `Link <http://goo.gl/TjyEeq>`_
+
+:doc:`ObjectReceiveClick <object-receive-click>` 
