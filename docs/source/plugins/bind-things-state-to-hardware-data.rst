@@ -44,7 +44,7 @@ event as following:
 
 The drawback is that your plugin is now bound to this specific object
 implementation, so it will work only with objects that have a behavior
-called "powered" which accepts true/false values (boolean behaviour).
+called **"powered"** which accepts true/false values (BooleanBehaviour class).
 
 To avoid binding your plugin to a specific object implementation you can
 just notify the raw read hardware value and convert it into a valid

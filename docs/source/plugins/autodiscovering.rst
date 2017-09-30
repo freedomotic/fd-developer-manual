@@ -39,11 +39,11 @@ More information about these properties:
 +===================+=====================+===================================================================================================================================================================+
 | object.class      | Light               | The type of the thing that will be created. It must be a string containing a thing type as you see in the things list menu of java frontend (when you press F6)   |
 +-------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| object.name       | My Light            | The name of the new thing. If the name already exists, a numeric ID will be added at the end of the name. For example: My Light 1                                                                 |
+| object.name       | My Light            | The name of the new thing. If the name already exists, a numeric ID will be added at the end of the name. For example: My Light 1                                 |
 +-------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | object.protocol   | ProtocolName        | (OPTIONAL) The name of the protocol used to manage this thing (eg: ZWave)                                                                                         |
 +-------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| object.address    | 1234                | (OPTIONAL) The address string (it is protocol dependent)                                                                                                           |
+| object.address    | 1234                | (OPTIONAL) The address string (it is protocol dependent)                                                                                                          |
 +-------------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note:: Omitting object.class and object.name properties makes the ProtocolRead event to be discarded if no such thing exists. If thing exists the state change described in the event is applied.
