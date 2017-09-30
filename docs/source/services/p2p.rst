@@ -17,6 +17,12 @@ data, which are silently synchronized with the others.
 
 Now we have a "state synchronization" but when we'll refine the mechanism we will have a "completely replicated cache" which is far better than the current system.
 
+.. image:: images/p2p.jpg
+    :width: 650px
+    :align: center
+    :height: 450px
+    :alt: Freedomotic P2P
+
 Roadmap
 -------
 
