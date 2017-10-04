@@ -5,22 +5,22 @@ Bind things state to web services
 Parse data from the Webservice
 ##############################
 
-Here you probably need to request a specific URL content using a GET request. Then parse the received result which is probably in JSON or XML. Take a look at
+Here, you will probably need to request a specific URL content using a GET request. Then you will need to parse the received result, which is probably in JSON or XML. Take a look at
 http://stackoverflow.com/questions/4216455/get-page-content-from-url
 
-All this will be implemented in the ``onRun()`` method of your plugin.
+All of this will be implemented in the ``onRun()`` method of your plugin.
 
 **This method is already threaded** so there is no need to create
 additional execution threads. It can be executed just one time or in a
-loop with some delay between the calls. To do it just call this method
+loop with some delay between the calls. To do this, just call this method
 in your plugin constructor:
 
 .. code:: 
 
    setPollingWait(2000);
 
-this way the ``onRun()`` method is executed in a dedicated thread every 2
-seconds. To disable the loop execution just set it with a negative
+This way the ``onRun()`` method is executed in a dedicated thread every 2
+seconds. To disable the loop execution, just set it with a negative
 value:
 
 .. code::
@@ -30,7 +30,7 @@ value:
 Send a Freedomotic event
 ########################
 
-We want to read temperature value for London using Weather Underground
+We want it to the read temperature value for London using Weather Underground's
 APIs.
 
 This event changes the temperature value of a thing on the map
@@ -60,7 +60,7 @@ configured with protocol "**weather-underground**" and address
 2. Create an event to be listened by triggers
 ---------------------------------------------
 
-Instead if you just want to notify an event which is not directly
+If you just want to notify an event which is not directly
 related to the object's states, it can be done in the following way: Events are published by
 plugins on messaging channels. A series of useful events is predefined
 in Freedomotic but you can create your own or simply use the
