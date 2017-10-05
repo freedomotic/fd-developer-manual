@@ -1,7 +1,7 @@
 Freedomotic Messaging System
 ============================
 
-Freedomotic uses simple structured messages (xml, json) to comunicate
+Freedomotic uses simple structured messages (xml, json) to communicate
 with its components. This is done through a **Messaging Middleware** (**Apache
 ActiveMQ**).
 
@@ -15,14 +15,14 @@ events.
 Each trigger may be associated with one or more commands
 defining a **reaction** or **automation**.
 
-From this architecture it follows that the program behavior is not
+Utilizing this architecture, program behavior is not
 predetermined but is fully modificable at runtime, making it extremely
 flexible and adaptable to any possible use in building automation.
 
-When sensor communicates a change in the environment it sends out an event.
+When a sensor communicates a change in the environment it sends out an event.
 
-A trigger, which is a sort of event filter, listens to the event
-subscribing the channel on which this event is sent. If the event is
+A trigger, which is a sort of an event filter, listens to the event
+subscribed to the channel on which this event is sent. If the event is
 consistent with the trigger one or more commands will be executed. The
 command is automatically sent to the actuator which is able to execute
 it.
@@ -35,8 +35,8 @@ it.
 -  A command can be something like ``turn on the light in the kitchen``
 -  An actuator can be relais board
 
-The result of the interaction between event, trigger and command is an
-automation. In this case the automation is ``if luminosity is less than
+The result of the interaction between event, trigger, and command is an
+automated action. In this case the automation is ``if luminosity is less than
 50% turn on the light in the kitchen``.
 
 .. note:: Triggers and commands are defined by the user using the **Jfrontend** graphical **EventEditor**. Triggers, commands and automations are saved as XML files.
@@ -52,7 +52,7 @@ Freedomotic itself) -> **Trigger** (acting as an events filter to define
 simple use cases) -> **Command** (executed by an actuator)
 
 In this example we will analyze an automation composed by a
-single command: ``IF Livingroom light turns on THEN say its status using text to
+single command: ``IF Livingroom light turns on THEN announce its status using text to
 speech``
 
 What happens in the framework?
@@ -62,10 +62,10 @@ from OFF (powered=false) to ON (powered=true). This kind of events is
 notified on channel ``app.event.sensor.object.behavior.change`` by a sensor
 plugin for example a Modbus sensor.
 
-Events can be notified by hardware protocol plugins, frontends or
+Events can be notified through hardware protocol plugins, frontends or
 Freedomotic itself as in this case.
 
-Here is an example event which informs all listeners that a thing named **Livingroom Light** has
+Here is an example event which informs all listeners that a 'thing' named **Livingroom Light** has
 changed:
 
 .. code:: xml
