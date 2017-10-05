@@ -2,9 +2,9 @@
 Data structures
 ===============
 
-If you plan to develop a plugin for Freedomotic you need to access the framework data structures.
+If you plan to develop a plugin for Freedomotic you will need to access the framework data structures.
 
-These types of data are concerned with building automation and
+These types of data are used with building automation and the
 Freedomotic architecture:
 
 1. Environment topology
@@ -16,7 +16,7 @@ Environment topology
 ####################
 
 Environment data are accessible by the static reference. It returns the
-Environment thing instance which gives you access to all the environment properties
+Environment's instance which gives you access to all of the Environment's properties
 
 .. code:: java
 
@@ -30,46 +30,46 @@ Returns all the zones in the environment
         Freedomotic.environment.getZones()
 
 **Zones** are logical (virtual) portions of the environment. To retrieve
-the list of physical environment rooms use (rooms are zones too)
+the list of physical environment rooms (rooms are also considered Zones) use:
 
 .. code:: java
 
         Freedomotic.environment.getRooms()
 
-Environment things
+Environmental 'Things'
 ------------------
 
-The things (lights, doors, couches, ...) in the environment can be retrived in different ways.
+The 'things' (lights, doors, couches, ...) in the environment can be retrived in different ways:
 
-Get a thing by its name
+Get a 'thing' by its name
 -----------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObject(String name)
 
-Get the things filtering by protocol and address property
+Get the 'things' filtered by protocol and address property
 ---------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObject(String protocol, String address)
 
-Get the list of the things linked to a specific protocol
+Get the list of the 'things' linked to a specific protocol
 --------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObjectByProtocol(String protocol)
 
-Get the list of all things in the current environment
+Get the list of all 'things' in the current environment
 -----------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObjects()
 
-This is the correct import to access this method
+Use the following import to access this method:
 
 .. code:: java
 
@@ -78,14 +78,14 @@ This is the correct import to access this method
 Plugins
 #######
 
-Get the list of loaded plugins
+Gets the list of loaded plugins
 ------------------------------
 
 .. code:: java
 
         AddonManager.getLoadedPlugins()
 
-it returns an ArrayList of Plugin type.
+Returns an ArrayList of Plugin type.
 
 Get a plugin by name
 --------------------
@@ -117,7 +117,7 @@ other methods are:
         double myVar = configuration.getDoubleProperty("PROPERTY-NAME", 1.5f);
         String myVar = configuration.getStringProperty("PROPERTY-NAME", "some text");
 
-read tuples properties from config file:
+read tuple properties from config file:
 
 .. code:: java
 
@@ -138,5 +138,5 @@ the received parameters this way:
 Accessing Data Structures from Crosslanguage Plugins
 ####################################################
 
-This is done through a REST connection which serves this data. More info
+This is done through a REST connection which serves the data. More info can be found
 at https://github.com/freedomotic/freedomotic/wiki/Freedomotic-APIs.
