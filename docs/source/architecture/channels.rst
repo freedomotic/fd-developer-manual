@@ -1,23 +1,23 @@
 Channels
 ========
 
-The concept of **channel** is central for the messaging
-system because events and commands are published on specific channels. 
+The concept of **channel** is central to the messaging
+system as events and commands are published on specific channels. 
 
-Events are notified by a sensor plugin. From Freedomotic point of view a sensor
-is composed of an hardware device and a software connected to the
+Events are initiated by a sensor plugin. From Freedomotic's point of view a sensor
+is composed of a hardware device and software connected to the
 middleware that manages it.
 
-Events can be exchanged in any of the supported format (e.g. POJO, JSON,
-XML) and are dispatched to the triggers through a **publish/subscribe**
-messaging channel meaning that each trigger has to subscribe to a
-channel to receive the events traveling trought it. 
+Events can be exchanged in any of the supported formats (e.g. POJO, JSON,
+XML) and are communicated to the triggers through a **publish/subscribe**
+messaging channel. Each trigger must be subscribed to a
+channel to receive the events traveling through it. 
 
 Wildcard subscription
 ---------------------
 
-It is possible to use wildcards for subscription to automatically
-include an entire range of events. For example if a sensor generates
+It is possible to use wildcards for subscriptions in order to automatically
+include an entire range of events. For example, if a sensor generates
 events on channel ``app.events.sensors.moving.person.P003`` a trigger
 can listen to this particular event to receive details about person
 P003’s movements. Otherwise if the trigger listens to
@@ -40,7 +40,7 @@ actuator or another sensing system.
 It allows to control the processing flow of the commands,
 capturing the resulting values of their execution. 
 
-Every commands list
+Every command list
 is executed in parallel within a **dedicated thread** (therefore several
 reactions can occur in parallel). Each thread sequentially dispatches
 each command found in its own list using the **request/reply** pattern.
@@ -77,10 +77,10 @@ Channel Examples
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | **TRIGGER SUBSCRIPTION** (to a Channel)                                                                                                                                              | **DESCRIPTION**                                                                                        |
 +======================================================================================================================================================================================+========================================================================================================+
-| app.events.sensors.moving.person.3                                                                                                                                                   | a trigger subscribing this channel can listen to all movements event related to the person with ID=3   |
+| app.events.sensors.moving.person.3                                                                                                                                                   | a trigger subscribing to this channel can listen to all movements event related to the person with ID=3   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| app.events.sensors.moving.person.\*                                                                                                                                                  | a trigger subscribing this channel can listen to all kind of events related to person with ID=3        |
+| app.events.sensors.moving.person.\*                                                                                                                                                  | a trigger subscribing to this channel can listen to all kind of events related to person with ID=3        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| app.events.sensors.>                                                                                                                                                                 | a trigger subscribing this channel can listen to all events notified to Freedomotic by sensors         |
+| app.events.sensors.>                                                                                                                                                                 | a trigger subscribing to this channel can listen to all events notified to Freedomotic by sensors         |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
