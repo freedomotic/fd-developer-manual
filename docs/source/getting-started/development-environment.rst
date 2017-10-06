@@ -1,13 +1,13 @@
 
-Developers quick start
+Developers Quick Start
 ======================
 
-Requirements check
+Requirements
 ------------------
 
-- **Java JDK:** version 8+ Openjdk/Oracle jdk (to install on Ubuntu: *sudo apt-get install openjdk-8-jdk*)
+- **Java JDK:** Version 8+ OpenJDK/Oracle JDK (to install on Ubuntu: *sudo apt-get install openjdk-8-jdk*)
  
-- **Maven:** version 2 or 3 (to install on Ubuntu: *sudo apt-get install maven*)
+- **Maven:** Version 2 or 3 (to install on Ubuntu: *sudo apt-get install maven*)
 - **Any OS** with java support (Linux, Windows, Mac, Solaris ...)
 
 **Development status**: beta testing
@@ -21,8 +21,8 @@ Set your local development environment
 
 1) Fork Freedomotic on GitHub
 
-* Create an account on https://github.com if you don't have one
-* Fork Freedomotic repository following this link: https://github.com/freedomotic/freedomotic/fork
+* Create an account on https://github.com if you don't already have one
+* Fork the Freedomotic repository by following this link: https://github.com/freedomotic/freedomotic/fork
 * Create the local clone of your online fork with this command:
 
 .. code::
@@ -61,15 +61,15 @@ If you miss this step Freedomotic won't start
 Git repository is an SDK
 ------------------------
 
-The GIT repository is a complete SDK with all you need to code and test your Freedomotic plugins. Once compiled for the first time open the **freedomotic-core** project with your favourite IDE and start it to try Freedomotic.
+The Git repository is a complete SDK with all you need to code and test your Freedomotic plugins. Once compiled for the first time, open the **freedomotic-core** project with your favourite IDE and start it to try Freedomotic.
 
-To develop your own plugin you can start from the **hello-world** example project included in *GIT_ROOT/plugins/devices/hello-world*. 
+To develop your own plugin, you can start from the **hello-world** example project included in *GIT_ROOT/plugins/devices/hello-world*. 
 
-Open it in your IDE, make some changes and compile. It will be automatically installed into Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
+Open it in your IDE, make some changes and compile. It will be automatically installed into the Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
 
 Javadoc
 --------
-Please refer to
+Please refer to:
 
 * `freedomotic-core <https://freedomotic.github.io/javadoc/freedomotic-core/>`_
 * `freedomotic-model <https://freedomotic.github.io/javadoc/freedomotic-model/>`_
