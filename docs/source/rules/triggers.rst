@@ -6,8 +6,8 @@ A **trigger** is a filter that permits to intercept an **event** on a **channel*
 
 It performs check on the event carrying values and tags and assigning a meaningful and reusable name to this restriction.
 
-For example an event can be the notification of time for example 10 o'Clock; a
-trigger can respond to time events. Suppose if the time is between 7 and 13 o'Clock, you can name this trigger
+For example, an event can be the notification of time for example 10 o'Clock; a
+trigger can respond to time events. Suppose if the time is between 7 and 13 o'clock, you can name this trigger
 ``it's morning`` and reuse it to perform **reactions** like ``IF it's morning THEN turn off outdoor
 lights``.
 
@@ -31,7 +31,7 @@ channel on which it is notified.
 
 To know which is the default channel of a particular event see listenable events page (TODO ADD A LINK).
 To capture the event you
-just create a trigger that is listening to the same channel. For example
+just create a trigger that is listening to the same channel. For example,
 the **PersonMoving** event is published on the channel ``app.event.sensor.person.movement.moving``.
 
 To intercept a person's movement you can define a trigger listening to
@@ -41,18 +41,18 @@ channel ``app.event.sensor.person.movement.moving``.
 How to filter received event parameters
 ---------------------------------------
 
-As said before a trigger is a event filter. It can read event parameters
+As said before a trigger is an event filter. It can read event parameters
 and filter them according to the rules defined in it. Every
-rule is called **statement**. A statement is composed by a **logical** value, an
+rule is called **statement**. A statement is composed of a **logical** value, an
 **attribute** name, an **operand** and a **value**.
 
 The action tag can be used to listen on the default channel of a specif
 event. You have to insert the complete path of the Java class that
-implements the event. Otherwise you can specify the channel with a
+implements the event. Otherwise, you can specify the channel with a
 custom string inside the ``<channel> </channel>`` tag.
 
 -  **logical**: is used to concatenate a statement with the previous statement.
-   The default value is *AND* ,means that the following rule is in logical AND
+   The default value is *AND*, means that the following rule is in logical AND
    with the previous. At this time only the AND logical value is
    implemented.
 -  **attribute**: it's the name of the event property to filter. To know
