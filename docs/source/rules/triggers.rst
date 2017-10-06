@@ -2,7 +2,7 @@
 Triggers
 ========
 
-A trigger is a filter that permits to intercept an **event** on a **channel**.
+A **trigger** is a filter that permits to intercept an **event** on a **channel**.
 
 It performs check on the event carrying values and tags and assigning a meaningful and reusable name to this restriction.
 
