@@ -4,29 +4,29 @@ Triggers
 
 A trigger is a filter that permits to intercept an **event** on a **channel**.
 
-It performs a check on the event carrying values and tags assigning a meaningful and reusable name to this restriction.
+It performs check on the event carrying values and tags and assigning a meaningful and reusable name to this restriction.
 
-For example, an event can be the notification that it is 10 o'Clock; a
-trigger can listen to time events and if the hour is between 7 and 13 o'Clock you can name this trigger
+For example an event can be the notification of time for example 10 o'Clock; a
+trigger can respond to time events. Suppose if the time is between 7 and 13 o'Clock, you can name this trigger
 ``it's morning`` and reuse it to perform **reactions** like ``IF it's morning THEN turn off outdoor
 lights``.
 
-Therefore, a trigger can be used to decide whether a notified event has
+Therefore a trigger can be used to decide whether a notified event has
 to be processed or not. Whenever an event is processed by a trigger, if
-the trigger is consistent with its definition, the associated commands
+the trigger is consistent with its definition, then the associated commands
 are executed. 
 
 A **reaction** represents a link between a trigger and one or
-more commands listed, executed by an actuator.
+more commands list executed by an actuator.
 
-In this brief tutorial, the manual creation of an XML
-trigger is explained. However, the end user can define triggers using the included
+In this brief tutorial the manual creation of an XML
+trigger is explained, however the end user can define triggers using the included
 graphical editor, so there is no need to edit the XML manually. 
 
 How to filter events using triggers
 -----------------------------------
 
-Events can be intercepted using triggers. Each event has a default
+Events can be intercepted using triggers. each event has a default
 channel on which it is notified. 
 
 To know which is the default channel of a particular event see listenable events page (TODO ADD A LINK).
@@ -34,7 +34,7 @@ To capture the event you
 just create a trigger that is listening to the same channel. For example
 the **PersonMoving** event is published on the channel ``app.event.sensor.person.movement.moving``.
 
-To intercept a person's movemen,t you can define a trigger listening to
+To intercept a person's movement you can define a trigger listening to
 channel ``app.event.sensor.person.movement.moving``.
 
 
@@ -42,7 +42,7 @@ How to filter received event parameters
 ---------------------------------------
 
 As said before a trigger is a event filter. It can read event parameters
-and filter they according to the rules defined in it. Every
+and filter them according to the rules defined in it. Every
 rule is called **statement**. A statement is composed by a **logical** value, an
 **attribute** name, an **operand** and a **value**.
 
@@ -51,12 +51,12 @@ event. You have to insert the complete path of the Java class that
 implements the event. Otherwise you can specify the channel with a
 custom string inside the ``<channel> </channel>`` tag.
 
--  **logical**: is used to concatenate a statement with the previous.
-   The default value is *AND* meaning the following rule is in logical AND
+-  **logical**: is used to concatenate a statement with the previous statement.
+   The default value is *AND* ,means that the following rule is in logical AND
    with the previous. At this time only the AND logical value is
    implemented.
--  **attribute**: it's the name of the event property to filter. The know
-   which properties are carried by an event you have to refer to the
+-  **attribute**: it's the name of the event property to filter. To know
+   which properties are carried by an event, you have to refer to the
    event page.
 -  **operand**: can be *EQUALS*, *REGEX*, *GREATER\_THAN*, *LESS\_THAN*,
    *GREATER\_EQUAL\_THAN*, *LESS\_EQUAL\_THAN*, *BETWEEN\_TIME*. It's used
