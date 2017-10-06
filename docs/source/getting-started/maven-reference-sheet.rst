@@ -58,7 +58,7 @@ marketplace page.
     cd FREEDOMOTIC_ROOT/plugins/devices/YOUR_PLUGIN_NAME
     mvn clean deploy -P market -D username="name" -D password="password"
 
-More details at how to publish a plugin.
+More details on how to publish a plugin.
 
 To know more about Maven phases, refer to the article "`Maven: introduction to
 the
