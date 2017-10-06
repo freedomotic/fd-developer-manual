@@ -2,7 +2,7 @@
 Contributors workflow
 =====================
 
-A normal git development workflow should be used with some
+A normal git development workflow should be used, with some
 considerations:
 
 1. **Always** develop on a feature branch.
@@ -10,9 +10,9 @@ considerations:
    forked **master** branch should just be a mirror of the official one and must be pulled
    frequently to be up to date with latest features and bugfixes.
 
-If you don't follow the previous suggestions your pull request probably will be rejected. 
+If you don't follow the previous suggestions your pull request will probably be rejected. 
 
-As a recommendation use meaningful branch names because they are going to be public.
+As a recommendation, use meaningful branch names because they are going to be public.
 
 How to contribute
 #################
@@ -51,13 +51,13 @@ This process works as follows:
     git push origin BRANCHNAME
 
 To generate a pull-request just click the **Create pull request** button
-on GitHub 6. Your pull request will be reviewed by Freedomotic
+on GitHub 6. Your pull request will be reviewed by the Freedomotic
 Development Team that will merge it into the main repository or ask for
 further revisions.
 
 More Info
 #########
 
-If you are clueless the procedure described above is covered in full
+If you are clueless, the procedure described above is covered in full
 details with screenshots
 https://help.github.com/articles/using-pull-requests/#initiating-the-pull-request
