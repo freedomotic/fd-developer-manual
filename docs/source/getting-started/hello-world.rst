@@ -2,28 +2,28 @@ The 'Hello World' Plugin
 ========================
 
 Here you'll learn how to add features starting from the **hello-world**
-plugin. This plugin is made of some boilerplate java code that you can
+plugin. This plugin is made of some boilerplate Java code that you can
 use as base to create your own plugin.
 
 Open the **freedomotic** maven project with your favourite IDE and
-compile it if not already done. This will build a set of modules;
-remember the **freedomotic-core** module is the Freedomotic runtime,
+compile it, if not already done. This will build a set of modules.
+Remember, the **freedomotic-core** module is the Freedomotic runtime,
 start it from your IDE to have it running.
 
 Now open the **hello-world** module in your IDE and compile it.
-It will be automatically installed into the **freedomotic-core**. 
+It will be automatically installed to the **freedomotic-core**. 
 
 Get familiar with Freedomotic
 #############################
 
-Here are some simple changes you can do with the plugin
+Here are some simple changes you can make with the plugin
 "`hello-world <https://github.com/freedomotic/freedomotic/tree/master/plugins/devices/hello-world>`__".
 
 
 Write a message to the GUI using a Freedomotic event
 ----------------------------------------------------
 
-in ``onRun()`` method of your plugin write:
+In the ``onRun()`` method of your plugin, write:
 
 .. code:: java
 
@@ -36,14 +36,14 @@ in ``onRun()`` method of your plugin write:
           notifyEvent(message);
         }
 
-then build your plugin, start Freedomotic and then your plugin.
+Then build your plugin, and start Freedomotic followed by the plugin.
 You will see a blue bubble with the current date and time at the upper left side
 of the environment map.
 
 Make your plugin send emails
 ----------------------------
 
-in ``onRun()`` method of your plugin write:
+In the ``onRun()`` method of your plugin, write:
 
 .. code:: java
 
@@ -54,12 +54,12 @@ in ``onRun()`` method of your plugin write:
             notifyEvent(message);
         }
 
-.. note:: this requires the `Mailer plugin <http://freedomotic.com/content/plugins/mailer>`_ to be installed and properly configured.
+.. note:: This requires the `Mailer plugin <http://freedomotic.com/content/plugins/mailer>`_ to be installed and properly configured.
 
 Print the list of things in the environment
 -------------------------------------------
 
-in ``onRun()`` method of your plugin write:
+In the ``onRun()`` method of your plugin, write:
 
 .. code:: java
 
@@ -76,17 +76,17 @@ in ``onRun()`` method of your plugin write:
                 LOG.info(buffer.toString());
         }
 
-then build your plugin, start Freedomotic and then your plugin.
-With a right click on **Log Viewer** plugin you will see the list of things.
+Then build your plugin, and start Freedomotic followed by the plugin.
+Right click on the **Log Viewer** plugin to see the list of things.
 
-.. note:: Change logging level to **INFO** using the combobox of log viewer plugin to filter the less important log records.
+.. note:: Change the logging level to **INFO**, using the combobox of log viewer plugin, to filter out the less important log records.
 
 Change a thing location on the map
 ----------------------------------
 
 This piece of code iterates over all loaded things and moves objects of
 type Person to a random location. The ``randomLocation()`` function should
-be implemented and must return an
+be implemented and must return a
 ``com.freedomotic.model.geometry.FreedomPoint`` type (remember to add
 freedomotic-model.jar to your classpath)
 
@@ -109,23 +109,23 @@ freedomotic-model.jar to your classpath)
 Change things state programmatically
 ------------------------------------
 
-If you want to change the object state according to a value readed from
-a web service like a weather forecast service: 
+If you want to change the object state according to a value read from
+a web service, such as a weather forecast: 
 https://github.com/freedomotic/freedomotic/wiki/Bound-objects-state-to-web-services-data
 
-If you want to change the object state according to a value readed from
-an hardware device like an Arduino relay board: 
+If you want to change the object state according to a value read from
+a hardware device, like an Arduino relay board: 
 https://github.com/freedomotic/freedomotic/wiki/Bound-objects-state-to-hardware-data
 
 Interact with users using a dialog box with multiple answers
 ------------------------------------------------------------
 
-You can take full advantages of other installed modules from your
+You can take full advantage of other installed modules from your
 plugin. For example you can use a third party text to speech plugin to
 make it say something programmatically from your plugin.
 
-You haven't to worry about how the external plugins works, you simply send to it a
-generic command. The example below uses **Jfrontend** plugin to prompt a
+You don't need to worry about how the external plugins works, you simply send to it a
+generic command. The example below uses the **Jfrontend** plugin to prompt a
 dialog with three choices.
 
 .. code:: java
@@ -158,12 +158,12 @@ dialog with three choices.
 Add a GUI to the plugin
 -----------------------
 
-To add a graphical interface you must create a Jframe and link it to the
-plugin in ``onStart()`` with the following code
+To add a graphical interface, you must create a Jframe and link it to the
+plugin in ``onStart()`` with the following code:
 
 .. code:: java
 
         gui = new PluginJFrame();
 
-To open the GUI right click on the plugin icon.
+To open the GUI, right-click on the plugin icon.
 
