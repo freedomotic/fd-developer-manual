@@ -2,9 +2,9 @@
 Commands
 ========
 
-When you create a new command you can choose two different ways, the
+When you create a new command, you can choose two different ways. The
 first is the creation of an xml file deployed in the
-*FREEDOMOTIC\_ROOT/data/cmd* folder, the second option is to use the
+*FREEDOMOTIC\_ROOT/data/cmd* folder. The second option is to use the
 **EventEditor** plugin. 
 
 The first choice is the best for developers because it guarantees full control of the values because the **EventEditor**
@@ -72,7 +72,7 @@ An example (say ElectricDevice current state)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the command properties received by a text to speech plugin
-when the automation ``IF a light turns on THEN say ElectricDevice current state`` is performed
+when the automation ``IF a light turns on THEN say ElectricDevice current state`` is performed.
 
 -  event.sender=Light
 -  event.date.day=4
