@@ -9,7 +9,7 @@ so be sure to have understood this concept before you continue reading.
 A **reaction** consists of a trigger and one or more commands. The listed commands
 are executed sequentially. The reactions run in parallel
 within a dedicated thread for each of them. The triggers and the
-commands are defined in files independent from the same reaction which
+commands are defined in files independent from the same reaction, which
 represents only a link. So it is possible to reuse commands and triggers
 in different reactions.
 
