@@ -4,7 +4,7 @@ Reactions (aka Automations)
 
 Reactions are based on the concept of
 `Channel <https://github.com/freedomotic/freedomotic/wiki/The-Channels-Concept>`__,
-so be sure to have understood this concept before continue reading.
+so be sure to have understood this concept before you continue reading.
 
 A **reaction** consists of a trigger and one or more commands. The listed commands
 are executed sequentially. The reactions run in parallel
@@ -20,9 +20,9 @@ Example:
 -  Command Sequence 1: Turn OFF Livingroom lights
 -  Command Sequence 2: Close Windows -> Close Blinds
 
-When is monday evening and the TV turns ON the lights in the livingroom
-are switched off. At the same time the windows start to close, when all
-the windows are completely closed the system begins the lowering the
+When it is Monday evening, and the TV turns ON the lights in the livingroom
+are switched off. At the same time the windows start to close, and when all
+the windows are completely closed, the system begins the lowering the
 blinds.
 
 XML Representation Reaction are deployed in
