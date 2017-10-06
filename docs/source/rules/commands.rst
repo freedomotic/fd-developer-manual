@@ -21,7 +21,7 @@ Command xml files are messages used to instruct the actuators on
 which action must be performed.
 
 Some commands are created at runtime,
-the same way the sensors creates events however commands can be created
+the same way the sensors creates events. However, commands can be created
 at "design" time by the developer to have this command embedded in the
 plugin (in *PLUGIN\_NAME/data/cmd* folder) or they can be created at
 runtime by the user/configurator (and it will be saved in
