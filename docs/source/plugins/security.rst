@@ -4,7 +4,7 @@ Security: authentication and authorization
 
 Freedomotic uses `Apache Shiro <https://shiro.apache.org/>`_, a Java security framework, to manage authentication and authorization.
 
-This tool is very flexible and offers many other features as cryptography and session management. Also it's very easy to configure and use.
+This tool is very flexible, and offers many other features as cryptography and session management. Also, it's very easy to configure and use.
 
 All the classes are accessible from `this folder <https://github.com/freedomotic/freedomotic/tree/master/framework/freedomotic-core/src/main/java/com/freedomotic/security>`_.
 
@@ -14,7 +14,7 @@ Authentication
 --------------
 
 The class `UserRealm <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-core/src/main/java/com/freedomotic/security/UserRealm.java>`_ makes the work.
-All users' data are stored in *users.xml* file located into *config* folder.  
+All users' data are stored in *users.xml* files located in *config* folder.  
 
 .. code:: xml
 
@@ -93,7 +93,7 @@ Every user has a specific **role** as reported in *roles.xml* file.
  </roles>
  
 
-A **role** defines a system profile and gives some permissions to interact with the system.
+A **role** defines a system profile, and gives some permissions to interact with the system.
 
 We have four different roles: **administrators**, **system**, **guests** and **managers**. The first two have unlimited privileges.
  
