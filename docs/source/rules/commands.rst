@@ -72,7 +72,7 @@ An example - ElectricDevice current state
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the command properties received by a text to speech plugin
-when the automation ``IF a light turns on THEN say ElectricDevice current state`` is performed
+when the automation ``IF a light turns on THEN say ElectricDevice current state`` is performed.
 
 -  event.sender=Light
 -  event.date.day=4
