@@ -2,12 +2,12 @@
 Commands
 ========
 
-When you create a new command, you can choose two different ways. The
-first is the creation of an xml file deployed in the
-*FREEDOMOTIC\_ROOT/data/cmd* folder. The second option is to use the
+When you create a new command, you can do it in two ways; the
+first is by creating an xml file deployed in the
+*FREEDOMOTIC\_ROOT/data/cmd* folder, the second option is to use the
 **EventEditor** plugin. 
 
-The first choice is the best for developers because it guarantees full control of the values because the **EventEditor**
+The first option is the best for developers because it guarantees full control of the values because the **EventEditor**
 is still under development.
 
 A Freedomotic command is a container of customizable parameters in the
@@ -20,7 +20,7 @@ actuator that can execute the task.
 Command xml files are messages used to instruct the actuators on
 which action must be performed.
 
-Some commands are created at runtime,
+Some commands are created at "runtime",
 the same way the sensors creates events however commands can be created
 at "design" time by the developer to have this command embedded in the
 plugin (in *PLUGIN\_NAME/data/cmd* folder) or they can be created at
@@ -34,8 +34,8 @@ Properties received by a driver plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  @owner.\*: all thing properties and behaviors with the value they
-   had before automation execution. If an automation rises the light
-   brightess values, the property ``@owner.object.behavior.brightness``
+   had before automation execution. If an automation raises the light
+   brightness values, the property ``@owner.object.behavior.brightness``
    contains the starting value not the target value. **This is
    received only by driver plugins.**
 -  +Any plugin specific property, defined in the xml command into *data/cmd*
@@ -62,13 +62,13 @@ Properties received by a service plugin
 -  @event.\*: contains all events properties
 -  @current.\*: contains the properties of the event after the
    evaluation of the previous commands of this automation. If an
-   automation rises the light brightess value, the property
+   automation raises the light brightness value, the property
    @current.object.behavior.brightness **contains the target value not
    the starting value**.
 -  +Any plugin specific property, defined in the xml command in data/cmd
    folder of the plugin itself.
 
-An example (say ElectricDevice current state)
+An example - ElectricDevice current state
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the command properties received by a text to speech plugin
@@ -250,7 +250,7 @@ Commands parameters can be scripted using javascript syntax like this:
     </command>
 
 This command uses text to speech to say the current temperature in a
-zone and makes a on the fly conversion fron celsius to fahrenheit
+zone and makes an on the fly conversion fron celsius to fahrenheit
 degrees. The property key is a variable in the scripting context that
 can be evaluated. 
 
