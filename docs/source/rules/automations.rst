@@ -6,10 +6,10 @@ Reactions are based on the concept of
 `Channel <https://github.com/freedomotic/freedomotic/wiki/The-Channels-Concept>`__,
 so be sure to have understood this concept before you continue reading.
 
-A **reaction** consists of a trigger and one or more commands. The listed commands
+A **reaction** consists of a trigger and at least one or more commands. The listed commands
 are executed sequentially. The reactions run in parallel
 within a dedicated thread for each of them. The triggers and the
-commands are defined in files independent from the same reaction which
+commands are defined in files that independent from the same reaction which
 represents only a link. So it is possible to reuse commands and triggers
 in different reactions.
 
@@ -20,14 +20,14 @@ Example:
 -  Command Sequence 1: Turn OFF Livingroom lights
 -  Command Sequence 2: Close Windows -> Close Blinds
 
-When it is Monday evening, and the TV turns ON the lights in the livingroom
-are switched off. At the same time the windows start to close, and when all
-the windows are completely closed, the system begins the lowering the
+When it is Monday evening and the TV turns ON, the lights in the livingroom
+are switched off. At the same time, the windows begin to close, when all
+the windows are completely shuted, the system begins to lower the
 blinds.
 
 XML Representation Reaction are deployed in
 **FREEDOMOTIC\_ROOT/data/rea** folder. This is the XML describing the
-previous scenary.
+previous scenery.
 
 .. code:: xml
 
@@ -60,7 +60,7 @@ the **data/rea** folder (is the folder which contains the
 **automations**, AKA **reactions**).
 
 Here an example ``WHEN a door is clicked AND livingroom light is on OR
-kitchen light is on THEN switch the open state of the clicked door``
+the kitchen light is on THEN switch the open state of the clicked door``
 
 .. code:: xml
 
