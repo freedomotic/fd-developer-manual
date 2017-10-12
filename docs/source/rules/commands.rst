@@ -2,26 +2,26 @@
 Commands
 ========
 
-When you create a new command, you can choose two different ways. The
+When you create a new command, you can choose from two different ways. The
 first is the creation of an xml file deployed in the
 *FREEDOMOTIC\_ROOT/data/cmd* folder. The second option is to use the
 **EventEditor** plugin. 
 
-The first choice is the best for developers because it guarantees full control of the values because the **EventEditor**
+The first choice is the best for developers because it guarantees full control of the values. This is because the **EventEditor**
 is still under development.
 
 A Freedomotic command is a container of customizable parameters in the
 form of ``parameter = value``. 
 
-Standard parameters are **name**, **description**
-and **receiver** to guarantee the correct routing of the message to the
-actuator that can execute the task.
+Standard parameters to guarantee the correct routing of the message to the
+actuator that can execute the task are **name**, **description**
+and **receiver**.
 
 Command xml files are messages used to instruct the actuators on
 which action must be performed.
 
 Some commands are created at runtime,
-the same way the sensors creates events. However, commands can be created
+the same way sensors create events. However, commands can be created
 at "design" time by the developer to have this command embedded in the
 plugin (in *PLUGIN\_NAME/data/cmd* folder) or they can be created at
 runtime by the user/configurator (and it will be saved in
@@ -35,7 +35,7 @@ Properties received by a driver plugin
 
 -  @owner.\*: all thing properties and behaviors with the value they
    had before automation execution. If an automation rises the light
-   brightess values, the property ``@owner.object.behavior.brightness``
+   brightness values, the property ``@owner.object.behavior.brightness``
    contains the starting value not the target value. **This is
    received only by driver plugins.**
 -  +Any plugin specific property, defined in the xml command into *data/cmd*
@@ -45,7 +45,7 @@ An example (turn on X10 device)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the properties received by a driver plugin which implements
-communicaton with X10 hardware.
+communication with X10 hardware.
 
 -  owner.object.protocol=X10
 -  owner.object.address=A01
@@ -62,7 +62,7 @@ Properties received by a service plugin
 -  @event.\*: contains all events properties
 -  @current.\*: contains the properties of the event after the
    evaluation of the previous commands of this automation. If an
-   automation rises the light brightess value, the property
+   automation rises the light brightness value, the property
    @current.object.behavior.brightness **contains the target value not
    the starting value**.
 -  +Any plugin specific property, defined in the xml command in data/cmd
@@ -103,8 +103,8 @@ The structure of a command
 
 Field| Description -------|------------------- name \| A short string
 that identifies the effect of the command execution (eg: turn on light
-in the kitcken) description \| An extended description of the effect of
-the command execution. Write it in form "IF an event occurs THEN the
+in the kitchen) description \| An extended description of the effect of
+the command execution. Write it in the form "IF an event occurs THEN the
 system ... yourDescription receiver \| The Channel on which the target
 plugin is listening to delay \| Not Yet Implemented, let this parameter
 to 0 timeout \| waiting time for the plugin reply, if 0 it's set to 10
@@ -233,7 +233,7 @@ Commands parameters can be scripted using javascript syntax like this:
 .. code:: xml
 
     <command>
-      <name>Say the current temperature converted in fahrenheit</name>
+      <name>Say the current temperature converted in Fahrenheit</name>
       <receiver>app.actuators.media.tts.in</receiver>
       <delay>0</delay>
       <timeout>2000</timeout>
@@ -243,19 +243,19 @@ Commands parameters can be scripted using javascript syntax like this:
       <executed>false</executed>
       <properties>
         <properties>
-          <property name="say" value="= say="The current temperature in @event.zone is " + Math.round(((@event.temperature+40)*1.8)-40) + " fahrenheit degrees. In celsius is @event.temperature degrees"/>
+          <property name="say" value="= say="The current temperature in @event.zone is " + Math.round(((@event.temperature+40)*1.8)-40) + " Fahrenheit degrees. In Celsius is @event.temperature degrees"/>
         </properties>
         <tuples/>
       </properties>
     </command>
 
 This command uses text to speech to say the current temperature in a
-zone and makes a on the fly conversion fron celsius to fahrenheit
-degrees. The property key is a variable in the scripting context that
+zone and makes a on the fly conversion from degrees Celsius to degrees Fahrenheit. 
+The property key is a variable in the scripting context that
 can be evaluated. 
 
 To make a value scriptable it must start with an "**=**"
-just like Excel. Values that not start with "**=**" are the same as the
+just like Excel. Values that do not start with "**=**" are the same as the
 previous Freedomotic versions.
 
 Here other example of scripting:

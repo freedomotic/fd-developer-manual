@@ -1,11 +1,11 @@
 Bind things state to hardware data
 ==================================
 
-To integrate new building automation protocols (eg: zwave, zigbee,
+To integrate new building automation protocols, (eg: zwave, zigbee,
 ...) you can create a dedicated plugin. 
 
 This plugin acts as a "translator" from Freedomotic generic commands to protocol specific
-commands and vice versa.
+commands, and vice versa.
 
 Read data from hardware
 -----------------------
@@ -18,7 +18,7 @@ event; take a look at `how to listen and notify
 events </content/make-your-plugin-send-and-listen-events>`__ tutorial.
 
 To bind an event to a change of the status of a specific object on the
-Freedomotic environment map you have two ALTERNATIVE choices:
+Freedomotic environment map, you have two ALTERNATIVE choices:
 
 Specify the new object state in the notified event
 --------------------------------------------------

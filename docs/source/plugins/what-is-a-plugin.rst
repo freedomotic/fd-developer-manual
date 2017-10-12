@@ -2,8 +2,8 @@
 What is a plugin?
 =================
 
-Freedomotic is an application extensible through plugins. Plugins are simple classes within a .jar java package. Each plugin is deployed in the FREEDOMOTIC_ROOT/plugins/ folder and loaded and initialized automatically at Freedomotic startup.
-The communication between the plugin and Freedomotic is automatically managed via a Message Oriented Middleware. Plugins in addition to the 'Manager of the messages' have direct access to Freedomotic data structures. In a plugin, you can create, read, update, or delete data and use them to accomplish your goals.
+Freedomotic is an application extensible through plugins. Plugins are simple classes within a .jar java package. Each plugin is deployed in the FREEDOMOTIC_ROOT/plugins/ folder, loaded, and initialized automatically at Freedomotic startup.
+The communication between the plugin and Freedomotic is automatically managed, via a Message Oriented Middleware. Plugins, in addition to the 'Manager of the messages', have direct access to Freedomotic data structures. In a plugin, you can create, read, update, or delete data and use them to accomplish your goals.
 
 Plugin Features
 ###############
