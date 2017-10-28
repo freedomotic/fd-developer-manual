@@ -2,18 +2,18 @@
 Create new thing types
 ======================
 
-To develop a new object type you have to create a Java extension which
-describes to the system the actions the new type of object is capable.
+To develop a new object type you have to create a Java extension. The extension
+describes to the system the actions the new type of object is capable of.
 
 After that your object can be instantiated by writing a XML file that
 describes the value of an instance of the object model you have
 implemented in Java.
 
 To create the **Java object model** you have to enlist the object properties
-and the values it can take. This is done adding
+and the values it can take. This is done by adding
 predefined listeners (called **behaviors**) to your object.
 
-For example a light can be turned on, turned off and dimmed. So it has a
+For example, a light can be turned on, turned off and dimmed. It has a
 behavior called **powered** that can be **true** or **false** and a behavior called
 **brightness** that can assume integer values from 0 to 100.
 
@@ -27,7 +27,7 @@ A behavior listens to change requests of its values, parses the request
 (for example a sensor notifies that a light brightness has changed) and
 performs the defined operation for this situation. 
 
-The design pattern underneat is the same as a Java listener used for a Swing button. An
+The design pattern underneath is the same as a Java listener used for a Swing button. An
 example can be more clear. This is the definition of the brightness
 property of a light object
 
@@ -39,22 +39,22 @@ property of a light object
           brightness.addListener(new RangedIntBehaviorListener() {
                @Override
                 public void onLowerBoundValue(Config params) {
-                //here you can add the code to execute if the brightness change to the
-                //lower value possible. Eg: brightness equals to zero means the 
-               //light must be turned off.
+                //here you can add the code to execute if the brightness changes to the
+                //lower value possible. Eg: brightness equal to zero means the 
+                //light must be turned off.
                  turnPowerOff(params); 
                 }
                @Override
                 public void onUpperBoundValue(Config params) {
-                //here you can add the code to execute if the brightness change to the
-                //upper value possible. Eg: brightness equals to 100 means the 
+                //here you can add the code to execute if the brightness changes to the
+                //upper most value possible. Eg: brightness equal to 100 means the 
                 //light must be set to on and not dimmed.
                 turnPowerOn(params);
                 }
                @Override
                public void onRangeValue(int rangeValue, Config params) {
                //here you can add the code to execute if the brightness changes to 
-               //a value inside the min-max range. Eg: brightness equals to 45 means 
+               //a value inside the min-max range. Eg: brightness equal to 45 means 
                //the object must change it's brightness value to 45.
                setBrightness(rangeValue, params);
                 }
@@ -67,7 +67,7 @@ the setBrightness() method will look like this
         public void setBrightness(int rangeValue, Config params) {
                 //executes the developer level command associated with 
                 //'set brightness' action defined in the object definition file.
-                //the parameter 'params' has inside the data for the correct execution of the action.
+                //the parameter 'params' contains the data for the correct execution of the action.
                 boolean executed = execute("set brightness", params); 
                 if (executed) {
                     powered.setValue(true); //if dimmed the light is on
@@ -95,10 +95,10 @@ properties:
 Load the object as a plugin
 ---------------------------
 
-As for any plugin the code must be compiled and it's jar file must be
+As for any plugin the code must be compiled and its jar file must be
 deployed in the *FREEDOMOTIC\_ROOT/plugins/objects/OBJECT\_NAME\_FOLDER*.
 At Freedomotic startup it loads all the objects inside
-*FREEDOMOTIC\_ROOT/plugins/objects/* subfolders regardless their names.
+*FREEDOMOTIC\_ROOT/plugins/objects/* subfolders regardless of their names.
 Objects don't require a XML configuration file.
 
 Create instances of your new object type
@@ -238,7 +238,7 @@ correspond to the same number that is used in the code.
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | intersecable          | Boolean   | A person shape can intersecate this object                                     |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| width                 | Integer   | the with of the object                                                         |
+| width                 | Integer   | the width of the object                                                         |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | height                | Integer   | the height of the object                                                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
@@ -288,7 +288,7 @@ The actions represent the tasks that could be performed by an object.
 These actions must be associated with the hardware command that
 have to be executed when the action is launched. As with the behavior,
 the name of each action must match the ones used in the object code.
-Also the command value should match the name of a existing command
+Also the command value should match the name of an existing command
 (normally a hardware command created by the hardware plugin developer).
 
 +---------+----------+-------------------------------------------------------------+
