@@ -13,8 +13,8 @@ Requirements
 **Development status**: beta testing
 
 **Current released version**:
-`Freedomotic Commander 5.6 RC3 <https://sourceforge.net/projects/freedomotic/files/freedomotic-commander-5.6.0-rc3.zip/download>`_
-(released on 1 Jul 2016)
+`Freedomotic Commander 5.6 RC4 <https://sourceforge.net/projects/freedomotic/files/freedomotic-commander-5.6.0-rc4.zip/download>`_
+(released on 16 Aug 2017)
 
 Set your local development environment
 --------------------------------------
@@ -77,4 +77,4 @@ Please refer to:
 Support
 -------
 
-Please join our `mailing list <https://groups.google.com/forum/#!forum/freedom-domotics>`_ and `share your experience <https://goo.gl/Iq8C6e>`_.
+Please join our `international <https://groups.google.com/forum/#!forum/freedom-domotics>`_ or `Italian <https://groups.google.com/forum/#!forum/freedomotic-it>`_ community and `share your experience <https://goo.gl/Iq8C6e>`_.
