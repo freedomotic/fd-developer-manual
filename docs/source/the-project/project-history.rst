@@ -1,13 +1,17 @@
 
-The project history
+Project History
 ===================
 
-The Department of Information Engineering and Computer Science (DISI) at the University of Trento has some research teams working on sensor
-networks for home nursering.
+The Department of Information Engineering and Computer Science (DISI) at the University of Trento had several research
+teams working on sensor networks for home monitoring and automation.
 
-They needed a **framework** capable of easily integrate different projects developed in heterogeneous languages, make them
-work together, to help testing and to produce visual demos for research partners. This way teams at DISI can focus on the core of their research,
-instead of developing custom solutions for every different project.
+They needed a **framework** capable of easily integrating different projects developed in heterogeneous languages. This
+framework needed to make those projects work together, help simplify testing, and produce visual demos to show to
+research partners. Using a common framework, teams at DISI could focus on the core of their research instead of
+developing custom solutions for each individual project. The **Freedomotic** project was created to fulfill these needs.
 
-These are the main Freedomotic goals and requirements: maintaining the framework flexible and modular so that it can be easily integrated and adapted to
-different (and potentially unknown) needs.
+The main goals and requirement of **Freedomotic** were: maintain a framework which was flexible and modular which could
+be easily integrated and adapted to different (and potentially unknown) needs, allowed for simple testing, and could
+produce visual demos. 
+
+These same goals and requirements continue to hold true today.
