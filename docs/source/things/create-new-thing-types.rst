@@ -2,8 +2,7 @@
 Create new thing types
 ======================
 
-To develop a new object type you have to create a Java extension which
-describes to the system the actions the new type of object is capable.
+To develop a new object type you have to create a Java extension which describes the actions that the new objects can perform.
 
 After that your object can be instantiated by writing a XML file that
 describes the value of an instance of the object model you have
@@ -13,8 +12,8 @@ To create the **Java object model** you have to enlist the object properties
 and the values it can take. This is done adding
 predefined listeners (called **behaviors**) to your object.
 
-For example a light can be turned on, turned off and dimmed. So it has a
-behavior called **powered** that can be **true** or **false** and a behavior called
+For example a light can be turned on, turned off, and dimmed. So it has a
+behavior called **powered** that can be **true** or **false**, and a behavior called
 **brightness** that can assume integer values from 0 to 100.
 
 A behavior is an instance of predefined classes. For example the
@@ -27,7 +26,7 @@ A behavior listens to change requests of its values, parses the request
 (for example a sensor notifies that a light brightness has changed) and
 performs the defined operation for this situation. 
 
-The design pattern underneat is the same as a Java listener used for a Swing button. An
+The design pattern underneath is the same as a Java listener used for a Swing button. An
 example can be more clear. This is the definition of the brightness
 property of a light object
 
@@ -105,11 +104,9 @@ Create instances of your new object type
 ----------------------------------------
 
 Now Freedomotic knows how this type of object can act when it receives a specific input.
-Then you have to provide one or more *.xobj* files that describe the instances
-of your object type. For example you have the light definitions but you
-need to add to the environment a light called 'kitchen light' and
-another one called 'livingroom light'. This is done through .xobj
-definition. TODO: explain how to create an xobj object
+Then you have to provide one or more *.xobj* files that describe the instances of your object type. For example you have the light definitions but you need to add to the environment a light called 'kitchen light' and another one called 'living room light'. This is done through .xobj definition. 
+
+TODO: explain how to create a xobj object
 
 -  `Here <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/java/com/freedomotic/things/impl/Light.java>`__
    an example of Java class for a light object
@@ -148,17 +145,14 @@ Common properties section
 Behaviors section
 #################
 
-In this section, the objects behaviors are configured. Each behavior
-name must match the same name that is used inside the object code. To
-facilitate the objects configuration, an object developer should expose
-all names that is using inside the code. The names are case sensitive.
+In this section the objects behaviors are configured. Each behavior name must have the same name that is used inside the object code. To facilitate the objects configuration an object developer should expose all names that is using inside the code. The names are case sensitive. 
 
 Boolean behavior
 ----------------
 
 It is used to describe a property that can have only two values: true or
-false, for example the property **powered** of an electric device such
-a Light.
+false. For example, the property **powered** of an electric device such
+a light.
 
 +---------------+---------------------------+-------------------------------------------------------------+------------+
 | Field         | Values                    | Description                                                 | Required   |
@@ -177,9 +171,8 @@ a Light.
 Ranged int behavior
 -------------------
 
-A behavior used to model a property that can assume a ranged set of
-integer values for example from zero to hundred. For example the
-volume property of a TV object.
+A behavior used to model a property that can have a ranged set of
+integer values. For example, from zero to hundred. For example the volume property of a TV object.
 
 +---------------+---------------------------+---------------------------------------------------------------------------+------------+
 | Field         | Values                    | Description                                                               | Required   |
@@ -205,8 +198,8 @@ Exclusive multivalue behavior
 -----------------------------
 
 This behavior represents an object feature that only takes values from a
-predefined list. For example the input property of a TV object could
-only take values like INPUT1, INPUT2, SATELLITE, etc...
+predefined list. For example the input property of a TV object couldtake values like INPUT1, INPUT2, SATELLITE, etc...
+
 
 +---------------+---------------------------+--------------------------------------------------------------+------------+
 | Field         | Values                    | Description                                                  | Required   |
@@ -236,49 +229,49 @@ correspond to the same number that is used in the code.
 +=======================+===========+================================================================================+
 | tangible              | Boolean   | The object is a physical object or not                                         |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| intersecable          | Boolean   | A person shape can intersecate this object                                     |
+| intersecable          | Boolean   | A person or shape can intersect this object                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| width                 | Integer   | the with of the object                                                         |
+| width                 | Integer   | The with of the object                                                         |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| height                | Integer   | the height of the object                                                       |
+| height                | Integer   | The height of the object                                                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| x                     | Integer   | it's x position starting from 0,0 (the upper left corner) of the environment   |
+| x                     | Integer   | It's x position starting from 0,0 (the upper left corner) of the environment   |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| y                     | Integer   | it's y position starting from 0,0 (the upper left corner) of the environment   |
+| y                     | Integer   | It's y position starting from 0,0 (the upper left corner) of the environment   |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| rotation              | Integer   | the rotation using the upper left corner of the object as pivot point          |
+| rotation              | Integer   | The rotation using the upper left corner of the object as pivot point          |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| fillcolor / red       | Integer   | the color that fills the geometrical shape of the object                       |
+| fillcolor / red       | Integer   | The color that fills the geometrical shape of the object                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| fillcolor / green     | Integer   | the color that fills the geometrical shape of the object                       |
+| fillcolor / green     | Integer   | The color that fills the geometrical shape of the object                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| fillcolor / blue      | Integer   | the color that fills the geometrical shape of the object                       |
+| fillcolor / blue      | Integer   | The color that fills the geometrical shape of the object                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| fillcolor / alpha     | Integer   | the color that fills the geometrical shape of the object                       |
+| fillcolor / alpha     | Integer   | The color that fills the geometrical shape of the object                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / red       | Integer   | the color of the text that describe the object                                 |
+| textColor / red       | Integer   | The color of the text that describe the object                                 |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / green     | Integer   | the color of the text that describe the object                                 |
+| textColor / green     | Integer   | The color of the text that describe the object                                 |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / blue      | Integer   | the color of the text that describe the object                                 |
+| textColor / blue      | Integer   | The color of the text that describe the object                                 |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / alpha     | Integer   | the color of the text that describe the object                                 |
+| textColor / alpha     | Integer   | The color of the text that describe the object                                 |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| borderColor / red     | Integer   | the color of the shape border                                                  |
+| borderColor / red     | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| borderColor / green   | Integer   | the color of the shape border                                                  |
+| borderColor / green   | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| borderColor / blue    | Integer   | the color of the shape border                                                  |
+| borderColor / blue    | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| borderColor / alpha   | Integer   | the color of the shape border                                                  |
+| borderColor / alpha   | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| shape/npoints         | Integer   | number of points use to describe the shape                                     |
+| shape/npoints         | Integer   | Number of points use to describe the shape                                     |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| shape/xpoints         | Integer   | ordered list of x coordinates of the points                                    |
+| shape/xpoints         | Integer   | Ordered list of x coordinates of the points                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| shape/ypoints         | Integer   | ordered list of y coordinates of the points                                    |
+| shape/ypoints         | Integer   | Ordered list of y coordinates of the points                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| icon                  | String    | the name of the icon in the resource folder (path can be omitted)              |
+| icon                  | String    | The name of the icon in the resource folder (path can be omitted)              |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 
 Actions section
