@@ -9,7 +9,7 @@ describes the value of an instance of the object model you have
 implemented in Java.
 
 To create the **Java object model** you have to enlist the object properties
-and the values it can take. This is done adding
+and the values it can take. This is done by adding
 predefined listeners (called **behaviors**) to your object.
 
 For example a light can be turned on, turned off, and dimmed. So it has a
