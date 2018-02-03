@@ -2,28 +2,28 @@
 Create new thing types
 ======================
 
-To develop a new object type you have to create a Java extension which describes the actions that the new objects can perform.
+To develop a new object type, you have to create a Java extension which describes the actions that the new objects can perform.
 
 After that your object can be instantiated by writing a XML file that
 describes the value of an instance of the object model you have
 implemented in Java.
 
-To create the **Java object model** you have to enlist the object properties
+To create the **Java object model**, you have to list the object properties
 and the values it can take. This is done by adding
 predefined listeners (called **behaviors**) to your object.
 
-For example a light can be turned on, turned off, and dimmed. So it has a
+For example, a light can be turned on, turned off, and dimmed. So it has a
 behavior called **powered** that can be **true** or **false**, and a behavior called
 **brightness** that can assume integer values from 0 to 100.
 
-A behavior is an instance of predefined classes. For example the
+A behavior is an instance of predefined classes. For example, the
 behavior **powered** is an instance of
 `BooleanBehavior.java <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-model/src/main/java/com/freedomotic/model/object/BooleanBehavior.java>`__
-while **brightness** instantiate
+while **brightness** is an instance of 
 `RangedIntBehavior.java <https://github.com/freedomotic/freedomotic/blob/master/framework/freedomotic-model/src/main/java/com/freedomotic/model/object/RangedIntBehavior.java>`__.
 
 A behavior listens to change requests of its values, parses the request
-(for example a sensor notifies that a light brightness has changed) and
+(for example, a sensor notifies that a light brightness has changed) and
 performs the defined operation for this situation. 
 
 The design pattern underneath is the same as a Java listener used for a Swing button. An
@@ -38,23 +38,23 @@ property of a light object
           brightness.addListener(new RangedIntBehaviorListener() {
                @Override
                 public void onLowerBoundValue(Config params) {
-                //here you can add the code to execute if the brightness change to the
-                //lower value possible. Eg: brightness equals to zero means the 
+                //here you can add the code to execute if the brightness changes to the
+                //lowest value possible. Eg: brightness equals to zero means the 
                //light must be turned off.
                  turnPowerOff(params); 
                 }
                @Override
                 public void onUpperBoundValue(Config params) {
-                //here you can add the code to execute if the brightness change to the
-                //upper value possible. Eg: brightness equals to 100 means the 
+                //here you can add the code to execute if the brightness changes to the
+                //highest value possible. Eg: brightness equals 100 means the 
                 //light must be set to on and not dimmed.
                 turnPowerOn(params);
                 }
                @Override
                public void onRangeValue(int rangeValue, Config params) {
                //here you can add the code to execute if the brightness changes to 
-               //a value inside the min-max range. Eg: brightness equals to 45 means 
-               //the object must change it's brightness value to 45.
+               //a value inside the min-max range. Eg: brightness equals 45 means 
+               //the object must change its brightness value to 45.
                setBrightness(rangeValue, params);
                 }
          });
@@ -66,13 +66,13 @@ the setBrightness() method will look like this
         public void setBrightness(int rangeValue, Config params) {
                 //executes the developer level command associated with 
                 //'set brightness' action defined in the object definition file.
-                //the parameter 'params' has inside the data for the correct execution of the action.
+                //the parameter 'params' has the data for the correct execution of the action.
                 boolean executed = execute("set brightness", params); 
                 if (executed) {
-                    powered.setValue(true); //if dimmed the light is on
+                    powered.setValue(true); //if dimmed, the light is on
                     brightness.setValue(rangeValue);
                     //set the light graphical representation
-                    setView(1); //points to the second element in the XML views array, the light on image.
+                    setView(1); //points to the second element in the XML views array, the "light on" image.
                     setChanged(true);
                 }
             }
@@ -94,26 +94,26 @@ properties:
 Load the object as a plugin
 ---------------------------
 
-As for any plugin the code must be compiled and it's jar file must be
+As for any plugin the code must be compiled and its jar file must be
 deployed in the *FREEDOMOTIC\_ROOT/plugins/objects/OBJECT\_NAME\_FOLDER*.
-At Freedomotic startup it loads all the objects inside
-*FREEDOMOTIC\_ROOT/plugins/objects/* subfolders regardless their names.
+As Freedomotic starts up, it loads all the objects inside the 
+*FREEDOMOTIC\_ROOT/plugins/objects/* subfolders irrespective of their names.
 Objects don't require a XML configuration file.
 
 Create instances of your new object type
 ----------------------------------------
 
-Now Freedomotic knows how this type of object can act when it receives a specific input.
-Then you have to provide one or more *.xobj* files that describe the instances of your object type. For example you have the light definitions but you need to add to the environment a light called 'kitchen light' and another one called 'living room light'. This is done through .xobj definition. 
+When it receives a specific input, Freedomotic knows how this type of object will execute.
+You will have to provide one or more *.xobj* files that describe the instances of your object type.
+For example, you have the light definitions but you you need to add to the environment a light called 'kitchen light' and another one called 'living room light'. This is done through .xobj definition. 
 
 TODO: explain how to create a xobj object
 
--  `Here <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/java/com/freedomotic/things/impl/Light.java>`__
-   an example of Java class for a light object
--  and
-   `here <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/resources/data/templates/light.xobj>`__
-   an xobj instance
--  for a more challenging object take a look at `TV
+-  An `example <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/java/com/freedomotic/things/impl/Light.java>`__
+    of Java class for a light object
+-  An `xobj <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/resources/data/templates/light.xobj>`__
+   instance
+-  For a more challenging object take a look at `TV
    object <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/tv/src/main/java/com/freedomotic/objects/impl/TV.java>`__
 -  and `its *xobj*
    instance <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/tv/src/main/resources/data/templates/Tv.xobj>`__
@@ -145,12 +145,12 @@ Common properties section
 Behaviors section
 #################
 
-In this section the objects behaviors are configured. Each behavior name must have the same name that is used inside the object code. To facilitate the objects configuration an object developer should expose all names that is using inside the code. The names are case sensitive. 
+In this section the object's behaviors are configured. Each behavior name must have the same name that is used inside the object code. To facilitate the object's configuration an object developer should expose all names that is using inside the code. The names are case sensitive. 
 
 Boolean behavior
 ----------------
 
-It is used to describe a property that can have only two values: true or
+Used to describe a property that can have only two values: true or
 false. For example, the property **powered** of an electric device such
 a light.
 
@@ -172,7 +172,7 @@ Ranged int behavior
 -------------------
 
 A behavior used to model a property that can have a ranged set of
-integer values. For example, from zero to hundred. For example the volume property of a TV object.
+integer values. For example, from zero to hundred or the volume property of a TV object.
 
 +---------------+---------------------------+---------------------------------------------------------------------------+------------+
 | Field         | Values                    | Description                                                               | Required   |
@@ -198,7 +198,7 @@ Exclusive multivalue behavior
 -----------------------------
 
 This behavior represents an object feature that only takes values from a
-predefined list. For example the input property of a TV object couldtake values like INPUT1, INPUT2, SATELLITE, etc...
+predefined list. For example, the input property of a TV object can only take values like INPUT1, INPUT2, SATELLITE, etc...
 
 
 +---------------+---------------------------+--------------------------------------------------------------+------------+
@@ -220,9 +220,9 @@ predefined list. For example the input property of a TV object couldtake values 
 Views section
 -------------
 
-Each view corresponds to a visual representation of the object that could
+Each view corresponds to a visual representation of the object that can
 be shown using the object code. The position of the view on the list
-correspond to the same number that is used in the code.
+corresponds to the same number that is used in the code.
 
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | Field                 | Values    | Description                                                                    |
@@ -231,13 +231,13 @@ correspond to the same number that is used in the code.
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | intersecable          | Boolean   | A person or shape can intersect this object                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| width                 | Integer   | The with of the object                                                         |
+| width                 | Integer   | The width of the object                                                         |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | height                | Integer   | The height of the object                                                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| x                     | Integer   | It's x position starting from 0,0 (the upper left corner) of the environment   |
+| x                     | Integer   | Its x position starting from 0,0 (the upper left corner) of the environment    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| y                     | Integer   | It's y position starting from 0,0 (the upper left corner) of the environment   |
+| y                     | Integer   | Its y position starting from 0,0 (the upper left corner) of the environment    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | rotation              | Integer   | The rotation using the upper left corner of the object as pivot point          |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
@@ -249,13 +249,13 @@ correspond to the same number that is used in the code.
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | fillcolor / alpha     | Integer   | The color that fills the geometrical shape of the object                       |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / red       | Integer   | The color of the text that describe the object                                 |
+| textColor / red       | Integer   | The color of the text that describes the object                                |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / green     | Integer   | The color of the text that describe the object                                 |
+| textColor / green     | Integer   | The color of the text that describes the object                                |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / blue      | Integer   | The color of the text that describe the object                                 |
+| textColor / blue      | Integer   | The color of the text that describes the object                                |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| textColor / alpha     | Integer   | The color of the text that describe the object                                 |
+| textColor / alpha     | Integer   | The color of the text that describes the object                                |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | borderColor / red     | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
@@ -265,7 +265,7 @@ correspond to the same number that is used in the code.
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | borderColor / alpha   | Integer   | The color of the shape border                                                  |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
-| shape/npoints         | Integer   | Number of points use to describe the shape                                     |
+| shape/npoints         | Integer   | Number of points used to describe the shape                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
 | shape/xpoints         | Integer   | Ordered list of x coordinates of the points                                    |
 +-----------------------+-----------+--------------------------------------------------------------------------------+
@@ -277,11 +277,11 @@ correspond to the same number that is used in the code.
 Actions section
 ---------------
 
-The actions represent the tasks that could be performed by an object.
+The actions represent the tasks that can be performed by an object.
 These actions must be associated with the hardware command that
-have to be executed when the action is launched. As with the behavior,
+has to be executed when the action is launched. As with the behavior,
 the name of each action must match the ones used in the object code.
-Also the command value should match the name of a existing command
+Also, the command value should match the name of an existing command
 (normally a hardware command created by the hardware plugin developer).
 
 +---------+----------+-------------------------------------------------------------+
