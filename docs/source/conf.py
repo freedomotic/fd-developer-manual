@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Freedomotic Developer Manual'
-copyright = u'2009-2019, Freedomotic Team, http://www.freedomotic-iot.com'
+copyright = u'2009-2019, Freedomotic Team, https://www.freedomotic-iot.com'
 author = u'The Freedomotic Team'
 
 # The version info for the project you're documenting, acts as replacement for
