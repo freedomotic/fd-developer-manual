@@ -39,7 +39,7 @@ configured with protocol "**weather-underground**" and address
 "**londonTemperature**".
 
 1. Specify the new state of the targeted thing in the notified event
------------------------------------------------------------
+--------------------------------------------------------------------
 
 .. code:: java
 
@@ -113,7 +113,7 @@ http://freedomotic.com/javadoc/it/freedomotic/events/package-frame.html
 .. note::  If your plugin's main purpose is to change the state of an object on the map (eg: set thermometer object value to the value read from Google Weather) then you should follow option 1.
 
 More information about triggers
-------------------------
+-------------------------------
 
 A trigger can listen on an events channel and filter the event content.
 If your event notifies about the outdoor temperature, then you can have a trigger
