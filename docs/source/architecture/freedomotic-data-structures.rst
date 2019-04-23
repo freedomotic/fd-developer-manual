@@ -42,7 +42,7 @@ Environmental 'Things'
 The 'things' (lights, doors, couches, ...) in the environment can be retrived in different ways:
 
 Get a 'thing' by its name
------------------------
+-------------------------
 
 .. code:: java
 
