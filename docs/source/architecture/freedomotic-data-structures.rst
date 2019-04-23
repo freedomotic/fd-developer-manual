@@ -37,7 +37,7 @@ the list of physical environment rooms (rooms are also considered Zones) use:
         Freedomotic.environment.getRooms()
 
 Environmental 'Things'
-------------------
+----------------------
 
 The 'things' (lights, doors, couches, ...) in the environment can be retrived in different ways:
 
