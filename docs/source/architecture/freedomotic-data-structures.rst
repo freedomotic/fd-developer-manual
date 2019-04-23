@@ -49,21 +49,21 @@ Get a 'thing' by its name
         EnvObjectPersistence.getObject(String name)
 
 Get the 'things' filtered by protocol and address property
----------------------------------------------------------
+----------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObject(String protocol, String address)
 
 Get the list of the 'things' linked to a specific protocol
---------------------------------------------------------
+----------------------------------------------------------
 
 .. code:: java
 
         EnvObjectPersistence.getObjectByProtocol(String protocol)
 
 Get the list of all 'things' in the current environment
------------------------------------------------------
+-------------------------------------------------------
 
 .. code:: java
 
@@ -79,7 +79,7 @@ Plugins
 #######
 
 Gets the list of loaded plugins
-------------------------------
+-------------------------------
 
 .. code:: java
 
