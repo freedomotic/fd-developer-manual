@@ -1,5 +1,5 @@
 Auto discover and auto configure things
-=====================================
+=======================================
 
 This feature is used to allow hardware plugins to create things
 automatically and place them on the already configured environment map just
@@ -7,7 +7,7 @@ like an **auto discovering** system. The things will be created and added
 to the loaded environment the first time their state changes.
 
 How to enable auto discovering in your plugin
------------------------------------------
+---------------------------------------------
 
 Suppose you have some bulbs connected to a relay board. The first time
 you turn on one of them, Freedomotic generates a new light object and
