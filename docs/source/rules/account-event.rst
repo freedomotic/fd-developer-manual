@@ -1,9 +1,9 @@
 Account event
 =============
 
-**Description**:
+**Description**: Account status changed
 
-**Channel**:
+**Channel**: app.event.sensor.account.change
 
 .. csv-table:: Event properties
    :header: "Property", "Description", "Value example"
