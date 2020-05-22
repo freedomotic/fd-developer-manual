@@ -70,13 +70,8 @@ first relay line``. The mapping between the object state and your plugin
 trigger will make the object to become "powered" when the first relay
 of the Arduino board is switched on.
 
-As a note, the object settings can be changed from jfrontend by right clicking
-on an object on the map (**Data source** tab), like in the image below:
-
-.. figure:: http://freedomotic.com/sites/default/files/wilsonkong888/lt111%20screen2.jpg?1406998130
-   :alt: Configure data sources
-
-   Configure data sources
+As a note, the object settings can be changed from JFrontend by right clicking
+on an object on the map (**Data source** tab).
 
 Write data to hardware
 ----------------------
