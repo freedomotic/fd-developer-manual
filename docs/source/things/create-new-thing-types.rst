@@ -109,14 +109,6 @@ For example, you have the light definitions but you you need to add to the envir
 
 TODO: explain how to create a xobj object
 
--  An `example <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/java/com/freedomotic/things/impl/Light.java>`__
-    of Java class for a light object
--  An `xobj <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/base-things/src/main/resources/data/templates/light.xobj>`__
-   instance
--  For a more challenging object take a look at `TV
-   object <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/tv/src/main/java/com/freedomotic/objects/impl/TV.java>`__
--  and `its *xobj*
-   instance <https://github.com/freedomotic/freedomotic/blob/master/plugins/objects/tv/src/main/resources/data/templates/Tv.xobj>`__
 
 How to create the XML object
 ############################
