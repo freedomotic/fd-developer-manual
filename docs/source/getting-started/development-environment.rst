@@ -5,7 +5,7 @@ Developers Quick Start
 Requirements
 ------------------
 
-- **Java JDK:** Version 8+ OpenJDK/Oracle JDK (to install on Ubuntu: *sudo apt-get install openjdk-8-jdk*)
+- **Java JDK:** Version 8 OpenJDK/Oracle JDK (to install on Ubuntu: *sudo apt-get install openjdk-8-jdk*)
  
 - **Maven:** Version 2 or 3 (to install on Ubuntu: *sudo apt-get install maven*)
 - **Any OS** with java support (Linux, Windows, Mac, Solaris ...)
@@ -67,12 +67,17 @@ To develop your own plugin, you can start from the **hello-world** example proje
 
 Open it in your IDE, make some changes and compile. It will be automatically installed into the Freedomotic runtime (**freedomotic-core** project). Just start **freedomotic-core** to try your latest changes.
 
-Javadoc
---------
-Please refer to:
+Create a build release
+----------------------
+To create a new release package execute inside the ROOT folder
 
-* `freedomotic-core <https://freedomotic.github.io/javadoc/freedomotic-core/>`_
-* `freedomotic-model <https://freedomotic.github.io/javadoc/freedomotic-model/>`_
+.. code::
+
+    mvn clean install
+    
+The zip file containing the build release is located inside *GIT_ROOT/framework/freedomotic-core/target/release/*.
+
+The release process is based on `create-release.xml <https://raw.githubusercontent.com/freedomotic/freedomotic/master/scripts/create-release.xml>`_ file.
 
 Support
 -------
