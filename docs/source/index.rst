@@ -52,7 +52,6 @@ Contents:
    Listen to events programmatically <plugins/listen-to-events-programmatically>
    Autodiscover and autoconfigure things <plugins/autodiscovering>
    Internationalization: translate your plugin <plugins/internationalization>
-   Publish your plugin <plugins/publish-your-plugin>
    Plugin samples <plugins/plugin-samples>
 
    
