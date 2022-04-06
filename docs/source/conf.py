@@ -259,6 +259,10 @@ htmlhelp_basename = 'FreedomoticDeveloperManualdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
+    
+     # Remove blanck pages after TOC and chapters 
+     'extraclassoptions': 'openany,oneside'
+     
      # The paper size ('letterpaper' or 'a4paper').
      #
      # 'papersize': 'letterpaper',
